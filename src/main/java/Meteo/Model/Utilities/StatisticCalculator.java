@@ -1,6 +1,6 @@
-package Utilities;
+package Meteo.Model.Utilities;
 
-import Eccezioni.EccezioniStatistiche;
+import Meteo.Model.Eccezioni.EccezioniStatistiche;
 
 import java.util.Vector;
 

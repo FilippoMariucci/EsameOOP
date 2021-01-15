@@ -1,10 +1,10 @@
-package Controller;
+package Meteo.Model.Controller;
 
-import Eccezioni.EccezioniStatistiche;
-import Eccezioni.TimeTravelerExeption;
-import Model.SpazioVariabili;
-import Repository.MeteoRepository;
-import Utilities.MeteoUtilities;
+import Meteo.Model.Eccezioni.EccezioniStatistiche;
+import Meteo.Model.Eccezioni.TimeTravelerExeption;
+import Meteo.Model.MODEL.SpazioVariabili;
+import Meteo.Model.Repository.MeteoRepository;
+import Meteo.Model.Utilities.MeteoUtilities;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.slf4j.Logger;

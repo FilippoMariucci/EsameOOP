@@ -1,4 +1,4 @@
-package Utilities;
+package Meteo.Model.Utilities;
 
 public class Contatore {
     private int val;

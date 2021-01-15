@@ -1,5 +1,6 @@
-package Utilities;
+package Meteo.Model.Utilities;
 
+import Meteo.Model.Service.StaticConfig;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -11,7 +12,7 @@ public class OpenWeatherParse {
     /**
      * ID della città
      */
-    private String CityId;
+    private Long CityId;
 
     /**
      * Istante temporale delle misurazioni, espresso in formato UNIX
@@ -34,12 +35,12 @@ public class OpenWeatherParse {
 
     private static final Logger logger= LoggerFactory.getLogger(OpenWeatherParse.class);
 
-    public OpenWeatherParse( String CityId) {
+    public OpenWeatherParse(Long CityId) {
         this.CityId=CityId;
     }
 
 
-    public String getCityId() {
+    public Long getCityId() {
         return CityId;
     }
 
@@ -74,7 +75,7 @@ public class OpenWeatherParse {
 
         try {
             obj=(JSONObject) parser.parse(result);
-            this.CityId=(String) obj.get("id");
+            this.CityId= (Long) obj.get("id");
             this.nomeCitta=(String) obj.get("name");
             this.Epoch=(Long)obj.get("dt");
             JSONObject main=(JSONObject) obj.get("main");

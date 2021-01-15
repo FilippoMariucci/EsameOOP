@@ -1,4 +1,4 @@
-package Eccezioni;
+package Meteo.Model.Eccezioni;
 
 public class EccezioniStatistiche extends Exception {
     public static final long serialVersion=3L;

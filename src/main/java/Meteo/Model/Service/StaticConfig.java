@@ -1,4 +1,4 @@
-package Service;
+package Meteo.Model.Service;
 
 public class StaticConfig {
     /**

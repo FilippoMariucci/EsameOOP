@@ -1,6 +1,6 @@
-package Api_Utente;
+package Meteo.Model.ApiUtente;
 
-import Controller.Configurations;
+import Meteo.Model.Controller.Configurations;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

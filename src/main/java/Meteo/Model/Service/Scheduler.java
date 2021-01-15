@@ -1,8 +1,9 @@
-package Service;
+package Meteo.Model.Service;
 
-import Controller.Configurations;
-import Model.SpazioVariabili;
-import Repository.MeteoRepository;
+import Meteo.Model.Controller.Configurations;
+import Meteo.Model.MODEL.SpazioVariabili;
+import Meteo.Model.Repository.MeteoRepository;
+
 import org.json.simple.JSONArray;
 import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
@@ -15,7 +16,7 @@ import java.io.IOException;
 
 
 @Component
-public class Scheduler {
+public class Scheduler{
     /**
      * @Autowired viene utilizzato poichè, essendo  MeteoRepository  un componente, esso viene
      * considerato come una classe la cui unica istanza viene gestita dal FrameWork
@@ -39,9 +40,9 @@ public class Scheduler {
         JSONArray lista = configurations.getConfig();
         if (StaticConfig.getCallOpenWeather()) {
             for (Object city : lista) {
-                logger.info("Recupero i dati di" + city.toString());
+                logger.info("Recupero i dati  di " + city.toString());
                 SpazioVariabili spazioVariabili = new SpazioVariabili();
-                spazioVariabili.getFromParse(city.toString());
+                spazioVariabili.getFromParse(Long.valueOf(city.toString()));
                 meteoRepository.save(spazioVariabili);
             }
         } else {

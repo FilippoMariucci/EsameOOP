@@ -1,9 +1,9 @@
-package Api_Utente;
+package Meteo.Model.ApiUtente;
 
-import Controller.RichiestaStatistiche;
-import Eccezioni.EccezioniStatistiche;
-import Repository.MeteoRepository;
-import Utilities.MeteoUtilities;
+import Meteo.Model.Controller.RichiestaStatistiche;
+import Meteo.Model.Eccezioni.EccezioniStatistiche;
+import Meteo.Model.Repository.MeteoRepository;
+import Meteo.Model.Utilities.MeteoUtilities;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;

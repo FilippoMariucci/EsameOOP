@@ -1,4 +1,4 @@
-package Utilities;
+package Meteo.Model.Utilities;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;

@@ -1,4 +1,4 @@
-package Controller;
+package Meteo.Model.Controller;
 
 
 import org.json.simple.JSONArray;

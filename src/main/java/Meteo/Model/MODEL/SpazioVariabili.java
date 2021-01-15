@@ -1,18 +1,20 @@
-package Model;
+package Meteo.Model.MODEL;
 
-import Utilities.OpenWeatherParse;
+import Meteo.Model.Utilities.OpenWeatherParse;
 import org.json.simple.parser.ParseException;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.IOException;
 
+@Entity
+@Table(name = "Meteo")
 public class SpazioVariabili {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "id",unique=true, nullable = false)
     private Long Id;
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String CityId;
+    private Long CityId;
     private Long Epoch;
     private String lang;
 
@@ -25,7 +27,7 @@ public class SpazioVariabili {
     }
 
 
-    public SpazioVariabili(String CityId, String lang, Long Epoch, Double tempMed, Double tempPerc, String nomeCitta) {
+    public SpazioVariabili(Long CityId, String lang, Long Epoch, Double tempMed, Double tempPerc, String nomeCitta) {
         this.CityId = CityId;
         this.lang = lang;
         this.Epoch = Epoch;
@@ -35,11 +37,11 @@ public class SpazioVariabili {
     }
 
 
-    public String getCityId() {
+    public Long getCityId() {
         return CityId;
     }
 
-    public void setCityId(String cityId) {
+    public void setCityId(Long cityId) {
         this.CityId = cityId;
     }
 
@@ -87,7 +89,7 @@ public class SpazioVariabili {
 
     /* rihiamo dal parse i valori e li assegno alle varibili attraverso i vari metodi get*/
 
-    public void getFromParse(String CityId) throws IOException, ParseException {
+    public void getFromParse(Long CityId) throws IOException, ParseException {
         OpenWeatherParse openWeatherParse = new OpenWeatherParse(CityId);
         openWeatherParse.parse();
         this.CityId = openWeatherParse.getCityId();

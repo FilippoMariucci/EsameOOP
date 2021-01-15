@@ -1,6 +1,6 @@
-package Utilities;
+package Meteo.Model.Utilities;
 
-import Model.SpazioVariabili;
+import Meteo.Model.MODEL.SpazioVariabili;
 
 public class Lingua {
     private  String leanguages;
