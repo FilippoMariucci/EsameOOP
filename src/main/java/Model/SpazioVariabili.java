@@ -21,18 +21,18 @@ public class SpazioVariabili {
     private String nomeCitta;
 
 
-    public SpazioVariabili() {}
+    public SpazioVariabili() {
+    }
 
 
     public SpazioVariabili(String CityId, String lang, Long Epoch, Double tempMed, Double tempPerc, String nomeCitta) {
         this.CityId = CityId;
         this.lang = lang;
-        this.Epoch=Epoch;
+        this.Epoch = Epoch;
         this.temp = tempMed;
         this.tempPerc = tempPerc;
         this.nomeCitta = nomeCitta;
     }
-
 
 
     public String getCityId() {
@@ -88,12 +88,13 @@ public class SpazioVariabili {
     /* rihiamo dal parse i valori e li assegno alle varibili attraverso i vari metodi get*/
 
     public void getFromParse(String CityId) throws IOException, ParseException {
-        OpenWeatherParse openWeatherParse=new OpenWeatherParse(CityId);
+        OpenWeatherParse openWeatherParse = new OpenWeatherParse(CityId);
         openWeatherParse.parse();
-        this.CityId=openWeatherParse.getCityId();
-        this.Epoch=openWeatherParse.getEpoch();
-        this.temp=openWeatherParse.getTemp();
-        this.nomeCitta=openWeatherParse.getNomeCitta();
-        this.tempPerc=openWeatherParse.getTempPerc();
+        this.CityId = openWeatherParse.getCityId();
+        this.Epoch = openWeatherParse.getEpoch();
+        this.temp = openWeatherParse.getTemp();
+        this.nomeCitta = openWeatherParse.getNomeCitta();
+        this.tempPerc = openWeatherParse.getTempPerc();
 
     }
+}

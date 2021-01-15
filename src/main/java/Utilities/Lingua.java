@@ -1,5 +1,7 @@
 package Utilities;
 
+import Model.SpazioVariabili;
+
 public class Lingua {
     private  String leanguages;
 

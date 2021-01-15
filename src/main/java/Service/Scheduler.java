@@ -1,5 +1,8 @@
 package Service;
 
+import Controller.Configurations;
+import Model.SpazioVariabili;
+import Repository.MeteoRepository;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;

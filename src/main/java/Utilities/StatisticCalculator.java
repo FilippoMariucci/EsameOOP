@@ -1,5 +1,7 @@
 package Utilities;
 
+import Eccezioni.EccezioniStatistiche;
+
 import java.util.Vector;
 
 public class StatisticCalculator extends MeteoUtilities {
@@ -58,15 +60,15 @@ public class StatisticCalculator extends MeteoUtilities {
     }
 
 
-    public Double getMax()throws EccezioneStatistiche{
+    public Double getMax()throws EccezioniStatistiche {
         if (max==-Double.MAX_VALUE)
-            throw new EccezioneStatistiche("Campioni non trovati");
+            throw new EccezioniStatistiche("Campioni non trovati");
         else return max;
     }
 
-    public Double getMin()throws EccezioneStatistiche{
+    public Double getMin()throws EccezioniStatistiche{
         if (max==Double.MAX_VALUE)
-            throw new EccezioneStatistiche("Campioni non trovati");
+            throw new EccezioniStatistiche("Campioni non trovati");
         else
             return min;
     }
@@ -74,11 +76,11 @@ public class StatisticCalculator extends MeteoUtilities {
     /**
      * Metodo che restituisce la media arrotondando le ultime due cifre dopo la virgola a soli due valori
      * @return Media
-     * @throws EccezioneStatistiche
+     * @throws EccezioniStatistiche
      */
-    public Double getMedia() throws EccezioneStatistiche {
+    public Double getMedia() throws EccezioniStatistiche {
         if (max==-Double.MAX_VALUE)
-            throw new EccezioneStatistiche("Campioni non trovati");
+            throw new EccezioniStatistiche("Campioni non trovati");
 
         else return Arrotonda(accumulatore/N_spazioVariabilis);
     }
@@ -87,11 +89,11 @@ public class StatisticCalculator extends MeteoUtilities {
     /**
      * Metodo che restituisce la varianza arrotondando le ultime due cifre dopo la virgola a soli due valori
      * @return Varianza
-     * @throws EccezioneStatistiche
+     * @throws EccezioniStatistiche
      */
-    public Double getVarianza()throws EccezioneStatistiche{
+    public Double getVarianza()throws EccezioniStatistiche{
         if (max==-Double.MAX_VALUE)
-            throw new EccezioneStatistiche("Campioni non trovati");
+            throw new EccezioniStatistiche("Campioni non trovati");
         else {
             Double med=this.getMedia();
             Double temp=0.0;
