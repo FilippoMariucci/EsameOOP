@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  *  Classe che mette in evidenza le API per le statistiche e gestisce le chiamate effettuabili tramite
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  */
 @SuppressWarnings("Unchecked")
+@RestController
 public class StatisticheApiUtente extends MeteoUtilities {
     private static final Logger logger= LoggerFactory.getLogger(StatisticheApiUtente.class);
 
