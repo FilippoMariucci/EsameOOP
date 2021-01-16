@@ -31,7 +31,7 @@ public class ConfigurationsApi {
      * metodo HTTP POST per modificare le configurazioni attuali.
      * Si serve della classe Configurations per leggere o modificare le configurazioni.
      *
-     * @author matteolorenzo&agnese
+     * @author dafimi
      * @RestController è l'annotazione utilizzata per definire i servizi web RESTful
      */
 
