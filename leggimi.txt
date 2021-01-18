@@ -1,0 +1,25 @@
+#Progetto svolto da Dario Trombetta, Filippo Mariucci e Michele D'Apote.
+
+
+
+****Diario di bordo****
+
+Abbiamo iniziato a lavorare al progetto subito dopo la fine delle lezioni, quindi intrno alla metà di Dicembre.
+Per quanto riguarda la parte progettuale, quindi i vari diagrammi UML, tutti noi 3 membri del gruppo avevamo delle buone cnoscenze di base riguardo tale argomento,
+l'alunno Trombetta avendo già lavorato con tali diagrammi durante il triennio delle superiori si è occupato principalmente della modellazione dei 3 diagrammi per la 
+strutturazione del progetto, ovviamente dialogando con gli altri 2 alunni per abbozzare concettualmente il progetto e per renderci conto in maniera concreta di
+ciò che saremmo andati a programmare.
+Siamo passati poi alla programmazione del progetto vero e proprio, e abbiamo deciso grazie al consiglio di Mariucci di cambiare il nostro IDE, lavorando tutti e 3 con
+IntelliJ, che abbiamo trovato molto più comodo e automatizzato rispetto Eclipse, anche grazie al suo layout molto più gradevole e colorato rispetto ad Eclipse.
+L'alunno Mariucci per quanto riguarda la parte di programmazione è risultato essere molto più preparato rispetto a Trombetta e D'Apote, sopratutto nell'utilizzo
+di SpringBoot e Postman, argomento inizialmente poco chiaro agli alunni.
+Grazie all'aiuto di Mariucci, alle conferenze di Teams in gruppo,alle linee di codice scritte insieme, e sporattutto alla voglia di fare, tali lacune sono state colmate.
+Lo svolgimento del progetto è stato svolto la maggior parte delle volte di pomeriggio, visto che l'alunno Trombetta purtroppo(ahimè, il readmi lo sta scrivendo lui!)
+soffre di sonno pesante, quindi il team è stato costretto a lavorare il pomeriggio.
+A parte leggeri ritardi, una volta definito un oario di incontro su un apposito gruppo WhatsApp, il team è stato quasi sempre puntuale, lavorando circa almeno 2 ore al
+giorno.
+Inoltre gli alunni hanno continuato a lavorare anche in maniera autonoma, magari per cercare di risolvere dei problemi riscontrati nello sviluppo del programma, o magari
+colmando argomenti poco chiari tramite le apposite diapositive messe a disposizione dal prof. Frontoni e dalla prof. Paolanti, o magari anche con spiegazioni trovate
+in giro per il web.
+Abbiamo anche svolto due ricevimenti, uno con il prof Frontoni, e uno con Massimo, per alcuni chiarimenti riguardo la traccia d'esame assegnata.
+
