@@ -41,7 +41,6 @@ public class Configurations {
      */
     @SuppressWarnings("unchecked")
     public JSONArray getConfig() {
-        //hjkkaka
 
         if (this.config.size() == 0) {
             File f = new File(this.filePath);
