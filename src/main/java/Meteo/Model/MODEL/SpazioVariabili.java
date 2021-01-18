@@ -17,13 +17,13 @@ public class SpazioVariabili {
     private Long CityId;
     private Long Epoch;
     private String lang;
-
     private Double temp;
     private Double tempPerc;
     private String nomeCitta;
 
 
     public SpazioVariabili() {
+        //hjkhgjklj
     }
 
 

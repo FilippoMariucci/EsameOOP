@@ -17,6 +17,8 @@ import java.io.IOException;
 
 @Component
 public class Scheduler{
+
+    //ghjhgf
     /**
      * @Autowired viene utilizzato poichè, essendo  MeteoRepository  un componente, esso viene
      * considerato come una classe la cui unica istanza viene gestita dal FrameWork

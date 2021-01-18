@@ -1,10 +1,12 @@
 package Meteo.Model.Utilities;
 
 import Meteo.Model.Eccezioni.EccezioniStatistiche;
+import Meteo.Model.MODEL.SpazioVariabili;
 
 import java.util.Vector;
 
 public class StatisticCalculator extends MeteoUtilities {
+    //jjhgfddf
     /**
      * Valore massimo assunto dalla grandezza nell'intervallo preso in considerazione
      */
@@ -13,6 +15,7 @@ public class StatisticCalculator extends MeteoUtilities {
      * Valore minimo assunto dalla grandezza nell'intervallo preso in considerazione
      */
     private Double min;
+
     /**
      * Contatore della quantità di campioni utilizzati
      */
@@ -73,6 +76,7 @@ public class StatisticCalculator extends MeteoUtilities {
             return min;
     }
 
+
     /**
      * Metodo che restituisce la media arrotondando le ultime due cifre dopo la virgola a soli due valori
      * @return Media
@@ -103,4 +107,6 @@ public class StatisticCalculator extends MeteoUtilities {
             return Arrotonda(temp/this.N_spazioVariabilis);
         }
     }
+
+
 }

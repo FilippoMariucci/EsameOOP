@@ -25,6 +25,7 @@ import java.util.Map;
 
 @RestController
 public class ConfigurationsApi {
+    //bbnn
     /**
      * Classe che espone le API per le configurazioni e gestisce le chiamate effettuabili tramite:
      * metodo HTTP GET per leggere le configurazioni attuali,

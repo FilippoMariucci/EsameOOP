@@ -1,6 +1,7 @@
 package Meteo.Model.Utilities;
 
 public class Contatore {
+    //hjb
     private int val;
     public Contatore() {
         val = 0;

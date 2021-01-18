@@ -16,6 +16,7 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 
 abstract class Richiesta extends MeteoUtilities {
+    //vsjhddcs
     private static final Logger logger = LoggerFactory.getLogger(Richiesta.class);
 
     /**

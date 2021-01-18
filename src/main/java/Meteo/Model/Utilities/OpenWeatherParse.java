@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.client.RestTemplate;
 
 public class OpenWeatherParse {
+    //jkjhgh
     /**
      * ID della città
      */
@@ -69,7 +70,7 @@ public class OpenWeatherParse {
         JSONObject obj=null;
         RestTemplate restTemplate= new RestTemplate();
         String result=restTemplate.getForObject(
-                "http://api.openweathermap.org/data/2.5/weather?id="+this.CityId+"&appid=acff9fc7b20e0ff3ebb1f1615f76abb1&lang=it",String.class
+                "http://api.openweathermap.org/data/2.5/weather?id="+this.CityId+"&appid=acff9fc7b20e0ff3ebb1f1615f76abb1&units=metric&lang=en",String.class
         );
         logger.info(result);
 

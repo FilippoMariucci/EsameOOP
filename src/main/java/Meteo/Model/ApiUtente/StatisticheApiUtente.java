@@ -42,6 +42,7 @@ public class StatisticheApiUtente extends MeteoUtilities {
 
     @RequestMapping(value = "/stats",method = RequestMethod.POST)
     public JSONObject stats(@RequestBody String filterStr){
+        //ghjk
         JSONObject answer = new JSONObject();
 
         Long time=0L;

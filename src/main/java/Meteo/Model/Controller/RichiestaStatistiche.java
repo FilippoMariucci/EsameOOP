@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
-public class RichiestaStatistiche extends Richiesta{
+public class RichiestaStatistiche extends Richiesta {
     private static final Logger logger= LoggerFactory.getLogger(RichiestaStatistiche.class);
 
     /**
@@ -31,6 +31,7 @@ public class RichiestaStatistiche extends Richiesta{
      */
     @Override
     public JSONObject getResult()throws EccezioniStatistiche{
+        //hjbhbshas
         if (fisrtParseRequest()){
             JSONArray result= new JSONArray();
             this.answer.put("code",0);
@@ -57,6 +58,7 @@ public class RichiestaStatistiche extends Richiesta{
     }
 
 
+
     /**
      * Metodo che si occupa di costruire la risposta in formato JSON
      * da ritornare al chiamante
@@ -69,6 +71,8 @@ public class RichiestaStatistiche extends Richiesta{
         List<SpazioVariabili> spazioVariabilis = meteoRepository.trovaValori(CityId,this.start,this.stop);
         JSONObject risultatiPerCityId=new JSONObject();
         risultatiPerCityId.put("CityId",CityId);
+     // risultatiPerCityId.put("te0",temp);
+      //risultatiPerCityId.put("hgf",TEMPpERC);
         risultatiPerCityId.put("type",type);
 
         StatisticCalculator statisticCalculator=new StatisticCalculator();
@@ -79,6 +83,8 @@ public class RichiestaStatistiche extends Richiesta{
         data.put("max",statisticCalculator.getMax());
         data.put("min",statisticCalculator.getMin());
         data.put("media",statisticCalculator.getMedia());
+        //data.put("Temperatura", );
+        //data.put("Temperatura percepita",risultatiPerCityId.put("temp",t));
         data.put("varianza", statisticCalculator.getVarianza());
         risultatiPerCityId.put("data",data);
         return risultatiPerCityId;

@@ -3,6 +3,7 @@ package Meteo.Model.Utilities;
 import Meteo.Model.MODEL.SpazioVariabili;
 
 public class Lingua {
+    //jhgfg
     private  String leanguages;
 
     public Lingua(String lingua) {

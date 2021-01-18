@@ -41,6 +41,7 @@ public class Configurations {
      */
     @SuppressWarnings("unchecked")
     public JSONArray getConfig() {
+        //hjkkaka
 
         if (this.config.size() == 0) {
             File f = new File(this.filePath);
@@ -63,6 +64,7 @@ public class Configurations {
             } else {
                 JSONArray stdConfig = new JSONArray();
                 stdConfig.add("3180582");
+                //stdConfig.add("it");
                 try {
                     this.setConfig(stdConfig);
                 } catch (IOException e) {

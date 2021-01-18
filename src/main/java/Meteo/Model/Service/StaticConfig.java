@@ -1,6 +1,7 @@
 package Meteo.Model.Service;
 
 public class StaticConfig {
+    //uugfghj
     /**
      * apikey per il collegamento a OpenWeather
      */
