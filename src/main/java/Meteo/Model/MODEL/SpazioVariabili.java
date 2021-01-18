@@ -62,9 +62,7 @@ public class SpazioVariabili {
     }
 
 
-    public double getTemp() {
-        return temp;
-    }
+
 
     public void setTemp(double tempRe) {
         this.temp = tempRe;
@@ -98,5 +96,8 @@ public class SpazioVariabili {
         this.nomeCitta = openWeatherParse.getNomeCitta();
         this.tempPerc = openWeatherParse.getTempPerc();
 
+    }
+    public double getTemp() {
+        return temp;
     }
 }

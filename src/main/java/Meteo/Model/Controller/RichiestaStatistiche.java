@@ -83,8 +83,9 @@ public class RichiestaStatistiche extends Richiesta {
         data.put("max",statisticCalculator.getMax());
         data.put("min",statisticCalculator.getMin());
         data.put("media",statisticCalculator.getMedia());
-        //data.put("Temperatura", );
-        //data.put("Temperatura percepita",risultatiPerCityId.put("temp",t));
+        data.put("temp",statisticCalculator.getTemp());
+        //data.put("tempPerc",statisticCalculator.getTempPerc());
+
         data.put("varianza", statisticCalculator.getVarianza());
         risultatiPerCityId.put("data",data);
         return risultatiPerCityId;

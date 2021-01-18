@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class MeteoUtilities {
-    //jhgfd
+
     /**
      * Metodo per effettuare arrotondamenti a due cifre decimali per i tipi double
      * @param valore Valore da arrotondare

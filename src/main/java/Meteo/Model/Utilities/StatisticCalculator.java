@@ -1,12 +1,12 @@
 package Meteo.Model.Utilities;
 
 import Meteo.Model.Eccezioni.EccezioniStatistiche;
-import Meteo.Model.MODEL.SpazioVariabili;
+
 
 import java.util.Vector;
 
 public class StatisticCalculator extends MeteoUtilities {
-    //jjhgfddf
+
     /**
      * Valore massimo assunto dalla grandezza nell'intervallo preso in considerazione
      */
@@ -15,6 +15,10 @@ public class StatisticCalculator extends MeteoUtilities {
      * Valore minimo assunto dalla grandezza nell'intervallo preso in considerazione
      */
     private Double min;
+
+    private Double temp;
+    private Double tempPerc;
+    private Double sp2;
 
     /**
      * Contatore della quantità di campioni utilizzati
@@ -50,17 +54,21 @@ public class StatisticCalculator extends MeteoUtilities {
 
     public void addSpazioVaribili(Double spazioVariabili){
         this.N_spazioVariabilis++;
+
         this.accumulatore+=spazioVariabili;
-        if (spazioVariabili > this.max)
-            this.max=spazioVariabili;
 
+        this.temp=spazioVariabili;
+        spazioVariabili=this.sp2;
+        sp2=this.temp;
+        if (sp2> this.max)
+            this.max=sp2;
 
-        if (spazioVariabili < this.min)
-            this.min=spazioVariabili;
+        if (sp2 < this.min)
+            this.min=sp2;
 
-
-        this.spazioVariabilis.add(spazioVariabili);
+        this.spazioVariabilis.add(sp2);
     }
+
 
 
     public Double getMax()throws EccezioniStatistiche {
@@ -106,7 +114,25 @@ public class StatisticCalculator extends MeteoUtilities {
             }
             return Arrotonda(temp/this.N_spazioVariabilis);
         }
+
+
+
     }
 
+    public Double getTemp() throws EccezioniStatistiche{
+        return temp;
+    }
+
+
+    /**
+     *  public Double getTempPerc() throws EccezioniStatistiche {
+     *
+     *         return tempPerc;
+     *     }
+     *
+     *
+      * @return
+     * @throws EccezioniStatistiche
+     */
 
 }
