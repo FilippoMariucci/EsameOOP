@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
-public class RichiestaStatistiche extends Richiesta {
+public class RichiestaStatistiche extends Richiesta{
     private static final Logger logger= LoggerFactory.getLogger(RichiestaStatistiche.class);
 
     /**
@@ -38,7 +38,6 @@ public class RichiestaStatistiche extends Richiesta {
 
             for (Object city :cities){
                 String CityId=(String) city;
-               // String cityName=(String)city;
                 logger.info(CityId);// giusto per controllare
 
                 if (this.type.equals("all")){
@@ -71,7 +70,7 @@ public class RichiestaStatistiche extends Richiesta {
         List<SpazioVariabili> spazioVariabilis = meteoRepository.trovaValori(CityId,this.start,this.stop);
         JSONObject risultatiPerCityId=new JSONObject();
         risultatiPerCityId.put("CityId",CityId);
-        //risultatiPerCityId.put("cityName",cityName);
+
         risultatiPerCityId.put("type",type);
 
         StatisticCalculator statisticCalculator=new StatisticCalculator();
@@ -79,9 +78,7 @@ public class RichiestaStatistiche extends Richiesta {
             statisticCalculator.addSpazioVaribili(getValue(spazioVariabili,type));
 
         }
-        for (SpazioVariabili spazioVariabili2:spazioVariabilis){
-            statisticCalculator.addSpazioVaribili(getValue2(spazioVariabili2,type));
-        }
+
 
 
 
@@ -89,7 +86,6 @@ public class RichiestaStatistiche extends Richiesta {
         JSONObject data =new JSONObject();
         data.put("temp",statisticCalculator.getTemp());
         data.put("max",statisticCalculator.getMax());
-        data.put("jhsd",statisticCalculator.getTempPerc());
         data.put("min",statisticCalculator.getMin());
         data.put("media",statisticCalculator.getMedia());
         data.put("varianza", statisticCalculator.getVarianza());

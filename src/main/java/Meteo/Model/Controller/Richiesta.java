@@ -66,7 +66,7 @@ abstract class Richiesta extends MeteoUtilities {
     /**
      * array contenente  la possibile grandezza
      */
-    protected String[] types = {"temperature"};
+    protected String[] types = {"temperature","all"};
 
     /**
      * Costruttore con paremetri MeteoRepository, Filtro
@@ -137,6 +137,8 @@ abstract class Richiesta extends MeteoUtilities {
         switch (type) {
             case "temperature":
                 return spazioVariabili.getTemp();
+            case "temperature2":
+                return spazioVariabili.getTempPerc();
 
             default:
                 return -999.0;
@@ -145,12 +147,6 @@ abstract class Richiesta extends MeteoUtilities {
 
     }
 
-    protected Double getValue2(SpazioVariabili spazioVariabili2, String type) {
-        switch (type) {
-            case "temperature":
-                return spazioVariabili2.getTempPerc();
-            default:return -999.0;
-        }
     }
-}
+
 
