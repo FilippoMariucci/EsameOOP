@@ -84,11 +84,11 @@ public class RichiestaStatistiche extends Richiesta{
 
 
         JSONObject data =new JSONObject();
-        data.put("temp",statisticCalculator.getTemp());
-        data.put("max",statisticCalculator.getMax());
-        data.put("min",statisticCalculator.getMin());
-        data.put("media",statisticCalculator.getMedia());
-        data.put("varianza", statisticCalculator.getVarianza());
+        data.put("Temperatura",statisticCalculator.getTemp());
+        data.put("Temperatura massima",statisticCalculator.getMax());
+        data.put("Temperatura minima",statisticCalculator.getMin());
+        data.put("Media",statisticCalculator.getMedia());
+        data.put("Varianza", statisticCalculator.getVarianza());
         risultatiPerCityId.put("data",data);
         return risultatiPerCityId;
 

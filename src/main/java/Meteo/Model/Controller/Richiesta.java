@@ -135,9 +135,9 @@ abstract class Richiesta extends MeteoUtilities {
 
     protected Double getValue(SpazioVariabili spazioVariabili, String type) {
         switch (type) {
-            case "temperature":
+            case "Temperatura1":
                 return spazioVariabili.getTemp();
-            case "temperature2":
+            case "Temperatura2":
                 return spazioVariabili.getTempPerc();
 
             default:
