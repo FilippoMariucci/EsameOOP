@@ -5,8 +5,16 @@
 
 ****Traccia d'esame****
 
-Implementare un servizio web per la visualizzazione delle condizioni meteo delle capitali d'europa più importanti. Per effettuare una ricerca parallela, occorre utilizzare gli ID delle Città. Il servizio deve dare la possibilità all'utente di modificare la lingua delle descrizioni del meteo, scegliendo una delle lingue a disposizione. Il servizio dovrà visualizzare e salvare le informazioni ogni ora. Infine dovrà generare delle statistiche, visualizzabili quando l'utente sceglierà una delle città dallo schermo. Quindi occorre gestire anche le interazioni tra utenti ed il servizio. Il file contenente gli ID delle Città è scaricabile dal loro sito.
-<STATS E FILTRI>: Statistiche periodiche riguardanti valori minimi, massimi, media e varianza di temperature delle varie città, sia reali sia percepite. Statistiche sulle lingue scelte per la visualizzazione, da parte degli utenti. Filtraggio in base alla periodicità (giornaliera, settimanale, mensile, range personalizzabile) e alle lingue maggiormente scelte.
+Implementare un servizio web per la visualizzazione delle condizioni meteo delle capitali d'europa più importanti. 
+Per effettuare una ricerca parallela, occorre utilizzare gli ID delle Città. Il servizio deve dare la possibilità all'utente di modificare la lingua delle 
+descrizioni del meteo, scegliendo una delle lingue a disposizione. 
+Il servizio dovrà visualizzare e salvare le informazioni ogni ora. 
+Infine dovrà generare delle statistiche, visualizzabili quando l'utente sceglierà una delle città dallo schermo.
+Quindi occorre gestire anche le interazioni tra utenti ed il servizio. 
+Il file contenente gli ID delle Città è scaricabile dal loro sito.
+<STATS E FILTRI>: Statistiche periodiche riguardanti valori minimi, massimi, media e varianza di temperature delle varie città, sia reali sia percepite.
+Statistiche sulle lingue scelte per la visualizzazione, da parte degli utenti.
+Filtraggio in base alla periodicità (giornaliera, settimanale, mensile, range personalizzabile) e alle lingue maggiormente scelte.
 
 
 
