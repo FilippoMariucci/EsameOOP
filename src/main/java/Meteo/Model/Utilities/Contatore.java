@@ -1,7 +1,7 @@
 package Meteo.Model.Utilities;
 
 public class Contatore {
-    //hjb
+
     private int val;
     public Contatore() {
         val = 0;
@@ -15,4 +15,6 @@ public class Contatore {
     public String toString() {
         return "Counter di valore " + val;
     }
+
+
 }

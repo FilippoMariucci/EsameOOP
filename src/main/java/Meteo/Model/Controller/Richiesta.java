@@ -66,39 +66,39 @@ abstract class Richiesta extends MeteoUtilities {
     /**
      * array contenente  la possibile grandezza
      */
-    protected String[] types = { "temperature"};
+    protected String[] types = {"temperature"};
 
     /**
      * Costruttore con paremetri MeteoRepository, Filtro
      */
 
-    public Richiesta(JSONObject  filter, MeteoRepository meteoRepository){
-        this.meteoRepository=meteoRepository;
-        this.filter=filter;
-        this.answer=new JSONObject();
+    public Richiesta(JSONObject filter, MeteoRepository meteoRepository) {
+        this.meteoRepository = meteoRepository;
+        this.filter = filter;
+        this.answer = new JSONObject();
     }
 
 
     /**
-     *Metodo astratto che si occupa di costruire la risposta. il metodo sarà svolto nella sua sottoclasse
+     * Metodo astratto che si occupa di costruire la risposta. il metodo sarà svolto nella sua sottoclasse
      */
 
     public abstract JSONObject getResult() throws EccezioniStatistiche;
 
     /**
-     *Metodo che si occupa di effettuare un primo parse dalla richesta
+     * Metodo che si occupa di effettuare un primo parse dalla richesta
      */
 
-    protected boolean fisrtParseRequest(){
+    protected boolean fisrtParseRequest() {
         try {
-            if((this.cities = (JSONArray) this.filter.get("cities")) == null)
+            if ((this.cities = (JSONArray) this.filter.get("cities")) == null)
                 return false;
-            if((this.period= (JSONObject) this.filter.get("period")) != null) {
+            if ((this.period = (JSONObject) this.filter.get("period")) != null) {
                 date2epoch();
             } else
                 return false;
 
-            if ((this.type=(String) this.filter.get("type"))==null)
+            if ((this.type = (String) this.filter.get("type")) == null)
                 return false;
 
             return true;
@@ -133,8 +133,8 @@ abstract class Richiesta extends MeteoUtilities {
         }
     }
 
-    protected Double getValue(SpazioVariabili spazioVariabili, String type){
-        switch (type){
+    protected Double getValue(SpazioVariabili spazioVariabili, String type) {
+        switch (type) {
             case "temperature":
                 return spazioVariabili.getTemp();
 
@@ -144,4 +144,13 @@ abstract class Richiesta extends MeteoUtilities {
         }
 
     }
+
+    protected Double getValue2(SpazioVariabili spazioVariabili2, String type) {
+        switch (type) {
+            case "temperature":
+                return spazioVariabili2.getTempPerc();
+            default:return -999.0;
+        }
+    }
 }
+

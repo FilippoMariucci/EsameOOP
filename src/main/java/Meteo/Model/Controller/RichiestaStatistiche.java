@@ -31,7 +31,6 @@ public class RichiestaStatistiche extends Richiesta {
      */
     @Override
     public JSONObject getResult()throws EccezioniStatistiche{
-        //hjbhbshas
         if (fisrtParseRequest()){
             JSONArray result= new JSONArray();
             this.answer.put("code",0);
@@ -39,6 +38,7 @@ public class RichiestaStatistiche extends Richiesta {
 
             for (Object city :cities){
                 String CityId=(String) city;
+               // String cityName=(String)city;
                 logger.info(CityId);// giusto per controllare
 
                 if (this.type.equals("all")){
@@ -71,24 +71,34 @@ public class RichiestaStatistiche extends Richiesta {
         List<SpazioVariabili> spazioVariabilis = meteoRepository.trovaValori(CityId,this.start,this.stop);
         JSONObject risultatiPerCityId=new JSONObject();
         risultatiPerCityId.put("CityId",CityId);
-     // risultatiPerCityId.put("te0",temp);
-      //risultatiPerCityId.put("hgf",TEMPpERC);
+        //risultatiPerCityId.put("cityName",cityName);
         risultatiPerCityId.put("type",type);
 
         StatisticCalculator statisticCalculator=new StatisticCalculator();
         for (SpazioVariabili spazioVariabili:spazioVariabilis){
             statisticCalculator.addSpazioVaribili(getValue(spazioVariabili,type));
+
         }
+        for (SpazioVariabili spazioVariabili2:spazioVariabilis){
+            statisticCalculator.addSpazioVaribili(getValue2(spazioVariabili2,type));
+        }
+
+
+
+
         JSONObject data =new JSONObject();
+        data.put("temp",statisticCalculator.getTemp());
         data.put("max",statisticCalculator.getMax());
+        data.put("jhsd",statisticCalculator.getTempPerc());
         data.put("min",statisticCalculator.getMin());
         data.put("media",statisticCalculator.getMedia());
-        data.put("temp",statisticCalculator.getTemp());
-        //data.put("tempPerc",statisticCalculator.getTempPerc());
-
         data.put("varianza", statisticCalculator.getVarianza());
         risultatiPerCityId.put("data",data);
         return risultatiPerCityId;
 
+        }
+
     }
-}
+
+
+

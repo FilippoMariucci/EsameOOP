@@ -15,9 +15,16 @@ public class StatisticCalculator extends MeteoUtilities {
      * Valore minimo assunto dalla grandezza nell'intervallo preso in considerazione
      */
     private Double min;
-
+    /**
+     * temperatura reale della città selezionata
+     */
     private Double temp;
+
+
     private Double tempPerc;
+    /**
+     * variabile di passaggio per poter inserire la temperatura reale
+     */
     private Double sp2;
 
     /**
@@ -48,15 +55,13 @@ public class StatisticCalculator extends MeteoUtilities {
 
     /**
      * Metodo che serve per aggiungere i dati
-     * Andrò ad eseguire diverse operazioni per andare ad assegnare a max,min,N_spazioVariabilis,accumulatore
+     * Andrò ad eseguire diverse operazioni per andare ad assegnare a temp,max,min,N_spazioVariabilis,accumulatore
      * i corrispettivi valori corretti
      */
 
     public void addSpazioVaribili(Double spazioVariabili){
         this.N_spazioVariabilis++;
-
         this.accumulatore+=spazioVariabili;
-
         this.temp=spazioVariabili;
         spazioVariabili=this.sp2;
         sp2=this.temp;
@@ -71,9 +76,11 @@ public class StatisticCalculator extends MeteoUtilities {
 
 
 
+
     public Double getMax()throws EccezioniStatistiche {
         if (max==-Double.MAX_VALUE)
             throw new EccezioniStatistiche("Campioni non trovati");
+
         else return max;
     }
 
@@ -120,19 +127,13 @@ public class StatisticCalculator extends MeteoUtilities {
     }
 
     public Double getTemp() throws EccezioniStatistiche{
+
         return temp;
     }
 
 
-    /**
-     *  public Double getTempPerc() throws EccezioniStatistiche {
-     *
-     *         return tempPerc;
-     *     }
-     *
-     *
-      * @return
-     * @throws EccezioniStatistiche
-     */
+    public Double getTempPerc() throws EccezioniStatistiche {
 
+        return tempPerc;
+    }
 }

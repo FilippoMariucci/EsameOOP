@@ -1,10 +1,5 @@
-/*
-Per prima cosa occorrerà definire il file di lingua di default nell’application.properties
+package Meteo.Model.Utilities;
 
-# INTERNATIONALIZATION (MessageSourceAutoConfiguration)
-spring.messages.basename=file_lingua
-spring.messages.cache-seconds=-1
-spring.messages.encoding=UTF-8 */
 
 //Il file_lingua.properties in italiano verrà tradotto rispettivamente in file_lingua_en.properties,
 // file_lingua_te.properties, file_lingua_es.properties e file_lingua_fr.properties.
@@ -14,12 +9,20 @@ spring.messages.encoding=UTF-8 */
 //Questo codice può essere inserito in qualsiasi classe di configurazione del progetto
 // Spring Boot purchè annotata con @Configuration.
 
-/*
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+
+import java.util.Locale;
+
 @Configuration
 public class InterceptorLanguage{
 
-     * Setting del Resolver per la lingua di default.
-     * @return LocaleResolver
+
 
     @Bean
     public LocaleResolver localeResolver() {
@@ -28,16 +31,10 @@ public class InterceptorLanguage{
         return slr;
     }
 
-
-     * Intercettatore del file per il cambio della lingua.
-
-   *@Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(localeChangeInterceptor());
     }
 
-
-     * Gestione delle url ?lang=it oppure ?lang=es/...
 
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor() {
@@ -45,7 +42,7 @@ public class InterceptorLanguage{
         lci.setParamName("lang");
         return lci;
     }
-}*/
+}
 
 //l responsabile del cambio della lingua è il LocaleChangeInterceptor che a seconda del parametro lang attiva o meno
 // un’altra lingua.
