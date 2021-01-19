@@ -123,6 +123,30 @@ public class RichiestaStatistiche extends Richiesta {
                 data2.put("Durchschnittstemperaturen", statisticCalculator.getMedia());
                 data2.put("Varianz zwischen den temperaturen", statisticCalculator.getVarianza());
                 risultatiPerCityId.put("Daten", data2);break;
+            case "en":
+                JSONObject data3 = new JSONObject();
+                data3.put("Temperature", statisticCalculator.getTemp());
+                data3.put("Minimum temperature", statisticCalculator.getMin());
+                data3.put("Maximum temperature", statisticCalculator.getMax());
+                data3.put("Avarege temperatures", statisticCalculator.getMedia());
+                data3.put("Variance between temperatures", statisticCalculator.getVarianza());
+                risultatiPerCityId.put("Data", data3);break;
+            case "fr":
+                JSONObject data4 = new JSONObject();
+                data4.put("Température", statisticCalculator.getTemp());
+                data4.put("Température minimale", statisticCalculator.getMin());
+                data4.put("Température maximale", statisticCalculator.getMax());
+                data4.put("Températures moyennes", statisticCalculator.getMedia());
+                data4.put("Variance entre les températures", statisticCalculator.getVarianza());
+                risultatiPerCityId.put("Les donnèes", data4);break;
+            case "es":
+                JSONObject data5 = new JSONObject();
+                data5.put("Temperatura", statisticCalculator.getTemp());
+                data5.put("Temperatura mìnima", statisticCalculator.getMin());
+                data5.put("Temperatura màxima", statisticCalculator.getMax());
+                data5.put("Temperaturas medias", statisticCalculator.getMedia());
+                data5.put("Variaciòn entre temperaturas", statisticCalculator.getVarianza());
+                risultatiPerCityId.put("Datos", data5);break;
 
             default:
                 logger.error("Lingua non disponibile");
