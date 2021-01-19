@@ -104,7 +104,7 @@ public class RichiestaStatistiche extends Richiesta {
         s = b.readLine();
 
         switch (s) {
-            case "it":
+            case "[\"it\"]":
                 JSONObject data1 = new JSONObject();
                 data1.put("Temperatura", statisticCalculator.getTemp());
                 data1.put("Temperatura minima", statisticCalculator.getMin());
@@ -115,7 +115,7 @@ public class RichiestaStatistiche extends Richiesta {
 
             break;
 
-            case "de":
+            case "[\"de\"]":
                 JSONObject data2 = new JSONObject();
                 data2.put("Temperatur", statisticCalculator.getTemp());
                 data2.put("Mindesttemperatur", statisticCalculator.getMin());
@@ -123,7 +123,7 @@ public class RichiestaStatistiche extends Richiesta {
                 data2.put("Durchschnittstemperaturen", statisticCalculator.getMedia());
                 data2.put("Varianz zwischen den temperaturen", statisticCalculator.getVarianza());
                 risultatiPerCityId.put("Daten", data2);break;
-            case "en":
+            case "[\"en\"]":
                 JSONObject data3 = new JSONObject();
                 data3.put("Temperature", statisticCalculator.getTemp());
                 data3.put("Minimum temperature", statisticCalculator.getMin());
@@ -131,7 +131,7 @@ public class RichiestaStatistiche extends Richiesta {
                 data3.put("Avarege temperatures", statisticCalculator.getMedia());
                 data3.put("Variance between temperatures", statisticCalculator.getVarianza());
                 risultatiPerCityId.put("Data", data3);break;
-            case "fr":
+            case "[\"fr\"]":
                 JSONObject data4 = new JSONObject();
                 data4.put("Température", statisticCalculator.getTemp());
                 data4.put("Température minimale", statisticCalculator.getMin());
@@ -139,7 +139,7 @@ public class RichiestaStatistiche extends Richiesta {
                 data4.put("Températures moyennes", statisticCalculator.getMedia());
                 data4.put("Variance entre les températures", statisticCalculator.getVarianza());
                 risultatiPerCityId.put("Les donnèes", data4);break;
-            case "es":
+            case "[\"es\"]":
                 JSONObject data5 = new JSONObject();
                 data5.put("Temperatura", statisticCalculator.getTemp());
                 data5.put("Temperatura mìnima", statisticCalculator.getMin());
