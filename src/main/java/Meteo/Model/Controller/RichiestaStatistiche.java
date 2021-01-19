@@ -3,6 +3,7 @@ package Meteo.Model.Controller;
 import Meteo.Model.Eccezioni.EccezioniStatistiche;
 import Meteo.Model.MODEL.SpazioVariabili;
 import Meteo.Model.Repository.MeteoRepository;
+import Meteo.Model.Utilities.Lingua;
 import Meteo.Model.Utilities.StatisticCalculator;
 
 import org.json.simple.JSONArray;
@@ -17,17 +18,18 @@ import java.net.URLEncoder;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
-public class RichiestaStatistiche extends Richiesta{
-    private static final Logger logger= LoggerFactory.getLogger(RichiestaStatistiche.class);
+public class RichiestaStatistiche extends Richiesta {
+    private static final Logger logger = LoggerFactory.getLogger(RichiestaStatistiche.class);
 
     /**
      * costruttore con parametri
+     *
      * @Param meteoRepository è l'archivio dati su cui effettuare le ricerche
      * @Param filtro è un filtro di ricerca ricevuto nelle api
      */
 
-    public RichiestaStatistiche(JSONObject filter, MeteoRepository meteoRepository){
-        super(filter,meteoRepository);
+    public RichiestaStatistiche(JSONObject filter, MeteoRepository meteoRepository) {
+        super(filter, meteoRepository);
     }
 
     /**
@@ -36,31 +38,30 @@ public class RichiestaStatistiche extends Richiesta{
      */
     @Override
     public JSONObject getResult() throws EccezioniStatistiche, IOException {
-        if (fisrtParseRequest()){
-            JSONArray result= new JSONArray();
-            this.answer.put("code",0);
-            this.answer.put("info","");
+        if (fisrtParseRequest()) {
+            JSONArray result = new JSONArray();
+            this.answer.put("code", 0);
+            this.answer.put("info", "");
 
-            for (Object city :cities){
-                String CityId=(String) city;
+            for (Object city : cities) {
+                String CityId = (String) city;
                 logger.info(CityId);// giusto per controllare
 
-                if (this.type.equals("all")){
-                    for (String type:this.types){
-                        result.add(calcolaStatistiche(CityId,type));
+                if (this.type.equals("all")) {
+                    for (String type : this.types) {
+                        result.add(calcolaStatistiche(CityId, type));
                     }
-                }else {
-                    result.add(calcolaStatistiche(CityId,this.type));
+                } else {
+                    result.add(calcolaStatistiche(CityId, this.type));
                 }
 
             }
-            this.answer.put("result",result);
-        }else {
-            this.answer=Generarisposta(3,"File not ok",0L);
+            this.answer.put("result", result);
+        } else {
+            this.answer = Generarisposta(3, "File not ok", 0L);
         }
         return this.answer;
     }
-
 
 
     /**
@@ -71,54 +72,66 @@ public class RichiestaStatistiche extends Richiesta{
      * sui dati estratti
      */
 
-    private JSONObject calcolaStatistiche(String CityId,String type) throws EccezioniStatistiche, IOException {
-        List<SpazioVariabili> spazioVariabilis = meteoRepository.trovaValori(CityId,this.start,this.stop);
-        JSONObject risultatiPerCityId=new JSONObject();
-        risultatiPerCityId.put("CityId",CityId);
+    private JSONObject calcolaStatistiche(String CityId, String type) throws EccezioniStatistiche, IOException {
+        List<SpazioVariabili> spazioVariabilis = meteoRepository.trovaValori(CityId, this.start, this.stop);
+        JSONObject risultatiPerCityId = new JSONObject();
+        risultatiPerCityId.put("CityId", CityId);
 
-        risultatiPerCityId.put("type",type);
+        risultatiPerCityId.put("type", type);
 
-        StatisticCalculator statisticCalculator=new StatisticCalculator();
-        for (SpazioVariabili spazioVariabili:spazioVariabilis){
-            statisticCalculator.addSpazioVaribili(getValue(spazioVariabili,type));
+        StatisticCalculator statisticCalculator = new StatisticCalculator();
+        for (SpazioVariabili spazioVariabili : spazioVariabilis) {
+            statisticCalculator.addSpazioVaribili(getValue(spazioVariabili, type));
 
         }
-       /**
-        * È possibile leggere da file una linea per volta, invece di un carattere per volta.
-        * Questo permette anche la lettura di interi, reali, ecc.
-        *Per poter leggere una linea per volta, è necessario creare un oggetto BufferedReader a partire dal FileReader.
-        * In altre parole, si crea prima un FileReader, poi usando questo si crea un BufferedReader.
-        * Quest'ultimo si può quindi usare per la lettura riga per riga
-        */
+        /**
+         * È possibile leggere da file una linea per volta, invece di un carattere per volta.
+         * Questo permette anche la lettura di interi, reali, ecc.
+         *Per poter leggere una linea per volta, è necessario creare un oggetto BufferedReader a partire dal FileReader.
+         * In altre parole, si crea prima un FileReader, poi usando questo si crea un BufferedReader.
+         * Quest'ultimo si può quindi usare per la lettura riga per riga
+         */
 
         FileReader f;
-        f=new FileReader("leanConfig.json");
+        f = new FileReader("leanConfig.json");
         BufferedReader b;
-        b=new BufferedReader(f);
+        b = new BufferedReader(f);
         /**
          * A questo punto si può leggere una riga per volta usando b.readLine().
          */
 
         String s;
-        s=b.readLine();
+        s = b.readLine();
 
+        switch (s) {
+            case "it":
+                JSONObject data1 = new JSONObject();
+                data1.put("Temperatura", statisticCalculator.getTemp());
+                data1.put("Temperatura minima", statisticCalculator.getMin());
+                data1.put("Temperatura massima", statisticCalculator.getMax());
+                data1.put("Media", statisticCalculator.getMedia());
+                data1.put("Varianza", statisticCalculator.getVarianza());
+                risultatiPerCityId.put("Dati", data1);
 
-        JSONObject data =new JSONObject();
-        data.put("Temperatura",statisticCalculator.getTemp());
-        data.put("Temperatura massima",statisticCalculator.getMax());
-        data.put("Temperatura minima",statisticCalculator.getMin());
-        data.put("Media",statisticCalculator.getMedia());
-        data.put("Varianza", statisticCalculator.getVarianza());
+            break;
 
+            case "de":
+                JSONObject data2 = new JSONObject();
+                data2.put("Temperatur", statisticCalculator.getTemp());
+                data2.put("Mindesttemperatur", statisticCalculator.getMin());
+                data2.put("Maximale temperatur", statisticCalculator.getMax());
+                data2.put("Durchschnittstemperaturen", statisticCalculator.getMedia());
+                data2.put("Varianz zwischen den temperaturen", statisticCalculator.getVarianza());
+                risultatiPerCityId.put("Daten", data2);break;
 
-        risultatiPerCityId.put("data",data);
-        return risultatiPerCityId;
-
-
+            default:
+                logger.error("Lingua non disponibile");
 
         }
 
+        return risultatiPerCityId;
     }
+}
 
 
 

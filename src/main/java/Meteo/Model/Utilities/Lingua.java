@@ -4,6 +4,8 @@ import Meteo.Model.MODEL.SpazioVariabili;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.security.Key;
+
 public class Lingua {
 
     private static  final Logger logger= LoggerFactory.getLogger(Lingua.class);
@@ -21,6 +23,8 @@ public class Lingua {
     public Lingua(String lingua) {
         this.leanguages=lingua;
     }
+
+
     public void contatoreLingua(){
 
 
@@ -34,7 +38,7 @@ public class Lingua {
         switch (this.leanguages){
             case "it":
                 this.text1="Dati";
-                this.text2="Temperatura";
+                this.text2="Tempratura";
                 this.text3="Temperatura minima";
                 this.text4="Temperatura massima";
                 this.text5="Media delle temperature";
