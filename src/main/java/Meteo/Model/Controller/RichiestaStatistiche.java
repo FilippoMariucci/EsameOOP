@@ -1,9 +1,10 @@
 package Meteo.Model.Controller;
 
+import Meteo.Model.Utilities.Contatore;
 import Meteo.Model.Eccezioni.EccezioniStatistiche;
 import Meteo.Model.MODEL.SpazioVariabili;
 import Meteo.Model.Repository.MeteoRepository;
-import Meteo.Model.Utilities.Lingua;
+
 import Meteo.Model.Utilities.StatisticCalculator;
 
 import org.json.simple.JSONArray;
@@ -73,6 +74,13 @@ public class RichiestaStatistiche extends Richiesta {
      */
 
     private JSONObject calcolaStatistiche(String CityId, String type) throws EccezioniStatistiche, IOException {
+
+        Contatore Ita = new Contatore();
+        Contatore Esp = new Contatore();
+        Contatore Deu = new Contatore();
+        Contatore Fra = new Contatore();
+        Contatore Eng = new Contatore();
+
         List<SpazioVariabili> spazioVariabilis = meteoRepository.trovaValori(CityId, this.start, this.stop);
         JSONObject risultatiPerCityId = new JSONObject();
         risultatiPerCityId.put("CityId", CityId);
@@ -103,19 +111,25 @@ public class RichiestaStatistiche extends Richiesta {
         String s;
         s = b.readLine();
 
+
+
         switch (s) {
             case "[\"it\"]":
+                Ita.incIta();
                 JSONObject data1 = new JSONObject();
                 data1.put("Temperatura", statisticCalculator.getTemp());
                 data1.put("Temperatura minima", statisticCalculator.getMin());
                 data1.put("Temperatura massima", statisticCalculator.getMax());
                 data1.put("Media", statisticCalculator.getMedia());
                 data1.put("Varianza", statisticCalculator.getVarianza());
+                data1.put("La lingua italiana e' stata scelta ", Ita.getConIt());
                 risultatiPerCityId.put("Dati", data1);
+
 
             break;
 
             case "[\"de\"]":
+                Deu.incDe();
                 JSONObject data2 = new JSONObject();
                 data2.put("Temperatur", statisticCalculator.getTemp());
                 data2.put("Mindesttemperatur", statisticCalculator.getMin());
@@ -124,6 +138,7 @@ public class RichiestaStatistiche extends Richiesta {
                 data2.put("Varianz zwischen den temperaturen", statisticCalculator.getVarianza());
                 risultatiPerCityId.put("Daten", data2);break;
             case "[\"en\"]":
+                Eng.incEn();
                 JSONObject data3 = new JSONObject();
                 data3.put("Temperature", statisticCalculator.getTemp());
                 data3.put("Minimum temperature", statisticCalculator.getMin());
@@ -132,6 +147,7 @@ public class RichiestaStatistiche extends Richiesta {
                 data3.put("Variance between temperatures", statisticCalculator.getVarianza());
                 risultatiPerCityId.put("Data", data3);break;
             case "[\"fr\"]":
+                Fra.incFr();
                 JSONObject data4 = new JSONObject();
                 data4.put("Température", statisticCalculator.getTemp());
                 data4.put("Température minimale", statisticCalculator.getMin());
@@ -140,6 +156,7 @@ public class RichiestaStatistiche extends Richiesta {
                 data4.put("Variance entre les températures", statisticCalculator.getVarianza());
                 risultatiPerCityId.put("Les donnèes", data4);break;
             case "[\"es\"]":
+                Esp.incEs();
                 JSONObject data5 = new JSONObject();
                 data5.put("Temperatura", statisticCalculator.getTemp());
                 data5.put("Temperatura mìnima", statisticCalculator.getMin());
