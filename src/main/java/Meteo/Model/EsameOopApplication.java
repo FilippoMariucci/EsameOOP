@@ -13,7 +13,7 @@ import javax.annotation.PostConstruct;
 
 @EnableScheduling
 public class EsameOopApplication {
-	//kjhg
+
 
 	@Autowired
 	private Environment env;
