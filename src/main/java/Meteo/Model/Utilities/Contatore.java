@@ -34,23 +34,23 @@ public class Contatore {
     }
 
     public int incIta() {
-        return contIt++;
+        return contIt+=1;
     }
 
     public int incFr() {
-        return contFr++;
+        return contFr+=1;
     }
 
     public int incEn() {
-        return contEn++;
+        return contEn+=1;
     }
 
     public int incEs() {
-        return contEs++;
+        return contEs+=1;
     }
 
     public int incDe() {
-        return contDe++;
+        return contDe+=1;
     }
 
 

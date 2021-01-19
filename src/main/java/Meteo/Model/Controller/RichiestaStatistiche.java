@@ -4,7 +4,7 @@ import Meteo.Model.Utilities.Contatore;
 import Meteo.Model.Eccezioni.EccezioniStatistiche;
 import Meteo.Model.MODEL.SpazioVariabili;
 import Meteo.Model.Repository.MeteoRepository;
-
+import java.lang.System.*;
 import Meteo.Model.Utilities.StatisticCalculator;
 
 import org.json.simple.JSONArray;
@@ -107,68 +107,76 @@ public class RichiestaStatistiche extends Richiesta {
         /**
          * A questo punto si può leggere una riga per volta usando b.readLine().
          */
-
-        String s;
-        s = b.readLine();
-
-
-
-        switch (s) {
-            case "[\"it\"]":
-                Ita.incIta();
-                JSONObject data1 = new JSONObject();
-                data1.put("Temperatura", statisticCalculator.getTemp());
-                data1.put("Temperatura minima", statisticCalculator.getMin());
-                data1.put("Temperatura massima", statisticCalculator.getMax());
-                data1.put("Media", statisticCalculator.getMedia());
-                data1.put("Varianza", statisticCalculator.getVarianza());
-                data1.put("La lingua italiana e' stata scelta ", Ita.getConIt());
-                risultatiPerCityId.put("Dati", data1);
+        do {
+            String s;
+            s = b.readLine();
 
 
-            break;
+            switch (s) {
+                case "[\"it\"]":
+                    Ita.incIta();
+                    JSONObject data1 = new JSONObject();
+                    data1.put("Temperatura", statisticCalculator.getTemp());
+                    data1.put("Temperatura minima", statisticCalculator.getMin());
+                    data1.put("Temperatura massima", statisticCalculator.getMax());
+                    data1.put("Media", statisticCalculator.getMedia());
+                    data1.put("Varianza", statisticCalculator.getVarianza());
+                    data1.put("La lingua italiana e' stata scelta ", Ita.getConIt());
+                    risultatiPerCityId.put("Dati", data1);
 
-            case "[\"de\"]":
-                Deu.incDe();
-                JSONObject data2 = new JSONObject();
-                data2.put("Temperatur", statisticCalculator.getTemp());
-                data2.put("Mindesttemperatur", statisticCalculator.getMin());
-                data2.put("Maximale temperatur", statisticCalculator.getMax());
-                data2.put("Durchschnittstemperaturen", statisticCalculator.getMedia());
-                data2.put("Varianz zwischen den temperaturen", statisticCalculator.getVarianza());
-                risultatiPerCityId.put("Daten", data2);break;
-            case "[\"en\"]":
-                Eng.incEn();
-                JSONObject data3 = new JSONObject();
-                data3.put("Temperature", statisticCalculator.getTemp());
-                data3.put("Minimum temperature", statisticCalculator.getMin());
-                data3.put("Maximum temperature", statisticCalculator.getMax());
-                data3.put("Avarege temperatures", statisticCalculator.getMedia());
-                data3.put("Variance between temperatures", statisticCalculator.getVarianza());
-                risultatiPerCityId.put("Data", data3);break;
-            case "[\"fr\"]":
-                Fra.incFr();
-                JSONObject data4 = new JSONObject();
-                data4.put("Température", statisticCalculator.getTemp());
-                data4.put("Température minimale", statisticCalculator.getMin());
-                data4.put("Température maximale", statisticCalculator.getMax());
-                data4.put("Températures moyennes", statisticCalculator.getMedia());
-                data4.put("Variance entre les températures", statisticCalculator.getVarianza());
-                risultatiPerCityId.put("Les donnèes", data4);break;
-            case "[\"es\"]":
-                Esp.incEs();
-                JSONObject data5 = new JSONObject();
-                data5.put("Temperatura", statisticCalculator.getTemp());
-                data5.put("Temperatura mìnima", statisticCalculator.getMin());
-                data5.put("Temperatura màxima", statisticCalculator.getMax());
-                data5.put("Temperaturas medias", statisticCalculator.getMedia());
-                data5.put("Variaciòn entre temperaturas", statisticCalculator.getVarianza());
-                risultatiPerCityId.put("Datos", data5);break;
 
-            default:
-                logger.error("Lingua non disponibile");
+                    break;
 
-        }
+                case "[\"de\"]":
+                    Deu.incDe();
+                    JSONObject data2 = new JSONObject();
+                    data2.put("Temperatur", statisticCalculator.getTemp());
+                    data2.put("Mindesttemperatur", statisticCalculator.getMin());
+                    data2.put("Maximale temperatur", statisticCalculator.getMax());
+                    data2.put("Durchschnittstemperaturen", statisticCalculator.getMedia());
+                    data2.put("Varianz zwischen den temperaturen", statisticCalculator.getVarianza());
+                    data2.put("La lingua tedesca e' stata scelta ", Deu.getContDe());
+                    risultatiPerCityId.put("Daten", data2);
+                    break;
+                case "[\"en\"]":
+                    Eng.incEn();
+                    JSONObject data3 = new JSONObject();
+                    data3.put("Temperature", statisticCalculator.getTemp());
+                    data3.put("Minimum temperature", statisticCalculator.getMin());
+                    data3.put("Maximum temperature", statisticCalculator.getMax());
+                    data3.put("Avarege temperatures", statisticCalculator.getMedia());
+                    data3.put("Variance between temperatures", statisticCalculator.getVarianza());
+                    data3.put("La lingua inglese e' stata scelta ", Eng.getContEn());
+                    risultatiPerCityId.put("Data", data3);
+                    break;
+                case "[\"fr\"]":
+                    Fra.incFr();
+                    JSONObject data4 = new JSONObject();
+                    data4.put("Température", statisticCalculator.getTemp());
+                    data4.put("Température minimale", statisticCalculator.getMin());
+                    data4.put("Température maximale", statisticCalculator.getMax());
+                    data4.put("Températures moyennes", statisticCalculator.getMedia());
+                    data4.put("Variance entre les températures", statisticCalculator.getVarianza());
+                    data4.put("La lingua francese e' stata scelta ", Fra.getContFr());
+                    risultatiPerCityId.put("Les donnèes", data4);
+                    break;
+                case "[\"es\"]":
+                    Esp.incEs();
+                    JSONObject data5 = new JSONObject();
+                    data5.put("Temperatura", statisticCalculator.getTemp());
+                    data5.put("Temperatura mìnima", statisticCalculator.getMin());
+                    data5.put("Temperatura màxima", statisticCalculator.getMax());
+                    data5.put("Temperaturas medias", statisticCalculator.getMedia());
+                    data5.put("Variaciòn entre temperaturas", statisticCalculator.getVarianza());
+                    data5.put("La lingua italiana e' stata scelta ", Ita.getContEs());
+                    risultatiPerCityId.put("Datos", data5);
+                    break;
+
+                default:
+                    logger.error("Lingua non disponibile");
+
+            }
+        } while (!(Ita==null) && !(Eng==null) && !(Esp==null) && !(Fra==null) && !(Deu==null));
 
         return risultatiPerCityId;
     }
