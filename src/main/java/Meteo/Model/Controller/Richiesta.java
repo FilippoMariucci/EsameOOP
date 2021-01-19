@@ -10,6 +10,7 @@ import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.security.InvalidParameterException;
 import java.time.Instant;
 import java.time.ZoneOffset;
@@ -83,7 +84,7 @@ abstract class Richiesta extends MeteoUtilities {
      * Metodo astratto che si occupa di costruire la risposta. il metodo sarà svolto nella sua sottoclasse
      */
 
-    public abstract JSONObject getResult() throws EccezioniStatistiche;
+    public abstract JSONObject getResult() throws EccezioniStatistiche, IOException;
 
     /**
      * Metodo che si occupa di effettuare un primo parse dalla richesta

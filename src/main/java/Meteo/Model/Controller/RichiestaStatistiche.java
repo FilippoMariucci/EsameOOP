@@ -9,6 +9,10 @@ import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 
 @SuppressWarnings("unchecked")
@@ -30,7 +34,7 @@ public class RichiestaStatistiche extends Richiesta{
      * Ritorna la rispota in formato JSON all'utente
      */
     @Override
-    public JSONObject getResult()throws EccezioniStatistiche{
+    public JSONObject getResult() throws EccezioniStatistiche, IOException {
         if (fisrtParseRequest()){
             JSONArray result= new JSONArray();
             this.answer.put("code",0);
@@ -66,7 +70,7 @@ public class RichiestaStatistiche extends Richiesta{
      * sui dati estratti
      */
 
-    private JSONObject calcolaStatistiche(String CityId,String type)throws EccezioniStatistiche {
+    private JSONObject calcolaStatistiche(String CityId,String type) throws EccezioniStatistiche, IOException {
         List<SpazioVariabili> spazioVariabilis = meteoRepository.trovaValori(CityId,this.start,this.stop);
         JSONObject risultatiPerCityId=new JSONObject();
         risultatiPerCityId.put("CityId",CityId);
@@ -78,6 +82,24 @@ public class RichiestaStatistiche extends Richiesta{
             statisticCalculator.addSpazioVaribili(getValue(spazioVariabili,type));
 
         }
+       /**
+        * È possibile leggere da file una linea per volta, invece di un carattere per volta.
+        * Questo permette anche la lettura di interi, reali, ecc.
+        *Per poter leggere una linea per volta, è necessario creare un oggetto BufferedReader a partire dal FileReader.
+        * In altre parole, si crea prima un FileReader, poi usando questo si crea un BufferedReader.
+        * Quest'ultimo si può quindi usare per la lettura riga per riga
+        */
+
+        FileReader f;
+        f=new FileReader("leanConfig.json");
+        BufferedReader b;
+        b=new BufferedReader(f);
+        /**
+         * A questo punto si può leggere una riga per volta usando b.readLine().
+         */
+
+        String s;
+        s=b.readLine();
 
 
         JSONObject data =new JSONObject();
@@ -88,6 +110,8 @@ public class RichiestaStatistiche extends Richiesta{
         data.put("Varianza", statisticCalculator.getVarianza());
         risultatiPerCityId.put("data",data);
         return risultatiPerCityId;
+
+
 
         }
 
