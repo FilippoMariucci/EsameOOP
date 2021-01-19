@@ -9,15 +9,10 @@ import java.net.URLEncoder;
 
 public class Translator {
 
-    public static void main(String[] args) throws IOException {
-        String text = "Hello world!";
-        //Translated text: Hallo Welt!
-        System.out.println("Translated text: " + translate("en", "de", text));
-    }
 
     private static String translate(String langFrom, String langTo, String text) throws IOException {
         // INSERT YOU URL HERE
-        String urlStr = "https://your.google.script.url" +
+        String urlStr = "https://script.google.com/macros/s/AKfycbxw2anCixsojspW9a45K73a0uKUqSdWojw-mCkQgZHkeJXUAiitl2Ol/exec" +
                 "?q=" + URLEncoder.encode(text, "UTF-8") +
                 "&target=" + langTo +
                 "&source=" + langFrom;

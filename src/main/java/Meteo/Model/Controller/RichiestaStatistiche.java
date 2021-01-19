@@ -80,9 +80,6 @@ public class RichiestaStatistiche extends Richiesta{
         }
 
 
-
-
-
         JSONObject data =new JSONObject();
         data.put("Temperatura",statisticCalculator.getTemp());
         data.put("Temperatura massima",statisticCalculator.getMax());
