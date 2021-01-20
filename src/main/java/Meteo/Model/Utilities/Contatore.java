@@ -1,58 +1,65 @@
 package Meteo.Model.Utilities;
 
+import Meteo.Model.Repository.MeteoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.persistence.*;
+
+
 public class Contatore {
+    private Integer it;
+    private Integer sp;
+    private Integer fr;
+    private Integer de;
+    private Integer en;
 
-    private int contIt=0;
-    private int contEn=0;
-    private int contEs=0;
-    private int contDe=0;
-    private int contFr=0;
 
-
-    public int getContIt(){
-        return contIt;
+    public Contatore(){
+        it=0;
+        sp=0;
+        fr=0;
+        de=0;
+        en=0;
     }
 
-    public int getContEn(){
-        return contEn;
+    public Integer getIt ( ) {
+        return it;
     }
 
-    public int getContDe(){
-        return contDe;
+    public Integer getSp ( ) {
+        return sp;
     }
 
-    public int getContEs(){
-        return contEs;
+    public Integer getFr ( ) {
+        return fr;
     }
 
-    public int getConIt(){
-        return contIt;
+    public Integer getDe ( ) {
+        return de;
     }
 
-    public int getContFr(){
-        return contFr;
+    public Integer getEn ( ) {
+        return en;
     }
 
-    public int incIta() {
-        return contIt+=1;
+    public Integer incIT ( ) {
+        this.it++;
+        return it;
     }
-
-    public int incFr() {
-        return contFr+=1;
+    public Integer incES ( ) {
+        this.sp++;
+        return sp;
     }
-
-    public int incEn() {
-        return contEn+=1;
+    public Integer incDE ( ) {
+        this.de++;
+        return de;
     }
-
-    public int incEs() {
-        return contEs+=1;
+    public Integer incFR ( ) {
+        this.fr++;
+        return fr;
     }
-
-    public int incDe() {
-        return contDe+=1;
+    public Integer incEN ( ) {
+        this.en++;
+        return en;
     }
-
-
-
 }

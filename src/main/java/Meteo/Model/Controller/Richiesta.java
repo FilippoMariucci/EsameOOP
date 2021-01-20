@@ -47,6 +47,7 @@ abstract class Richiesta extends MeteoUtilities {
 
     protected JSONArray cities;
 
+
     /**
      * JSONObject che conterrà il periodo di ricerca richiesto dall'utente
      */

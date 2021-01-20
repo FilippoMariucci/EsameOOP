@@ -20,10 +20,24 @@ public class SpazioVariabili {
     private Double temp;
     private Double tempPerc;
     private String nomeCitta;
+    @Column(name="iTALIANO")
+    private Integer it;
+    @Column(name="Spagnolo")
+    private Integer sp;
+    @Column(name="Francese")
+    private Integer fr;
+    @Column(name="Tedesco")
+    private Integer de;
+    @Column(name="Inglese")
+    private Integer en;
 
 
     public SpazioVariabili() {
-        //hjkhgjklj
+                it=0;
+                sp=0;
+                fr=0;
+                de=0;
+                en=0;
     }
 
 
@@ -35,6 +49,7 @@ public class SpazioVariabili {
         this.tempPerc = tempPerc;
         this.nomeCitta = nomeCitta;
     }
+
 
 
     public Long getCityId() {
@@ -100,4 +115,97 @@ public class SpazioVariabili {
     public double getTemp() {
         return temp;
     }
+
+
+    /**
+     * public Integer incIT() {
+     *           this.it++;
+     *           return it;
+     *      }
+     *
+     *
+     *               public Integer incES() {
+     *          this.sp++;
+     *          return sp;
+     *       }
+     *
+     *               public Integer incDE() {
+     *           this.de++;
+     *           return de;
+     *       }
+     *
+     *               public Integer incFR() {
+     *           this.fr++;
+     *           return fr;
+     *       }
+     *
+     *               public Integer incEN() {
+     *           this.en++;
+     *           return en;
+     *       }
+     * @return
+     */
+
+
+    public Integer getIt() {
+        return it;
+    }
+
+    public void setIt(Integer it) {
+        this.it = it;
+    }
+
+    public Integer getSp() {
+        return sp;
+    }
+
+    public void setSp(Integer sp) {
+        this.sp = sp;
+    }
+
+    public Integer getFr() {
+        return fr;
+    }
+
+    public void setFr(Integer fr) {
+        this.fr = fr;
+    }
+
+    public Integer getDe() {
+        return de;
+    }
+
+    public void setDe(Integer de) {
+        this.de = de;
+    }
+
+    public Integer getEn() {
+        return en;
+    }
+
+    public void setEn(Integer en) {
+        this.en = en;
+    }
+    public Integer incIT ( ) {
+        this.it++;
+        return it;
+    }
+    public Integer incES ( ) {
+        this.sp++;
+        return sp;
+    }
+    public Integer incDE ( ) {
+        this.de++;
+        return de;
+    }
+    public Integer incFR ( ) {
+        this.fr++;
+        return fr;
+    }
+    public Integer incEN ( ) {
+        this.en++;
+        return en;
+    }
+
+
 }

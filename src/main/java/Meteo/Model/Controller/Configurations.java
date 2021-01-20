@@ -10,6 +10,15 @@ import org.springframework.stereotype.Component;
 
 import java.io.*;
 
+
+/**
+ *
+ * Classe che, richiamata da ConfigurationsAPI, permette di leggere o modificare le configurazioni
+ * dinamiche dell'applicativo
+ * @Component annotazione che definisce la classe come componente autogestito da Spring
+ *
+ * @author
+ */
 @Component
 public class Configurations {
     private static final Logger logger = LoggerFactory.getLogger(Configurations.class);

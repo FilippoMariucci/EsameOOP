@@ -47,11 +47,11 @@ public class LeanguagesConfiguration {
                     logger.error(e.toString());
                 }
             } else {
-                JSONArray stdConfig = new JSONArray();
-                stdConfig.add("it");
+                JSONArray stdLeanConfig = new JSONArray();
+                stdLeanConfig.add("it");
 
                 try {
-                    this.setLeanConfig(stdConfig);
+                    this.setLeanConfig(stdLeanConfig);
                 } catch (IOException e) {
                     //problemi di IO
                     logger.error(e.getMessage());

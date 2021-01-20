@@ -44,12 +44,12 @@ public class StatisticCalculator extends MeteoUtilities {
      * Costruttore di default
      */
 
-    public StatisticCalculator(){
-        this.max=-Double.MAX_VALUE;
-        this.min=Double.MAX_VALUE;
-        this.N_spazioVariabilis=0;
-        this.accumulatore=0.0;
-        this.spazioVariabilis=new Vector<Double>();
+    public StatisticCalculator ( ) {
+        this.max = -Double.MAX_VALUE;
+        this.min = Double.MAX_VALUE;
+        this.N_spazioVariabilis = 0;
+        this.accumulatore = 0.0;
+        this.spazioVariabilis = new Vector<Double>();
     }
 
 
@@ -59,33 +59,31 @@ public class StatisticCalculator extends MeteoUtilities {
      * i corrispettivi valori corretti
      */
 
-    public void addSpazioVaribili(Double spazioVariabili){
+    public void addSpazioVaribili ( Double spazioVariabili ) {
         this.N_spazioVariabilis++;
-        this.accumulatore+=spazioVariabili;
-        this.temp=spazioVariabili;
-        spazioVariabili=this.sp2;
-        sp2=this.temp;
-        if (sp2> this.max)
-            this.max=sp2;
+        this.accumulatore += spazioVariabili;
+        this.temp = spazioVariabili;
+        spazioVariabili = this.sp2;
+        sp2 = this.temp;
+        if (sp2 > this.max)
+            this.max = sp2;
 
         if (sp2 < this.min)
-            this.min=sp2;
+            this.min = sp2;
 
         this.spazioVariabilis.add(sp2);
     }
 
 
-
-
-    public Double getMax()throws EccezioniStatistiche {
-        if (max==-Double.MAX_VALUE)
+    public Double getMax ( ) throws EccezioniStatistiche {
+        if (max == -Double.MAX_VALUE)
             throw new EccezioniStatistiche("Campioni non trovati");
 
         else return max;
     }
 
-    public Double getMin()throws EccezioniStatistiche{
-        if (max==Double.MAX_VALUE)
+    public Double getMin ( ) throws EccezioniStatistiche {
+        if (max == Double.MAX_VALUE)
             throw new EccezioniStatistiche("Campioni non trovati");
         else
             return min;
@@ -94,46 +92,48 @@ public class StatisticCalculator extends MeteoUtilities {
 
     /**
      * Metodo che restituisce la media arrotondando le ultime due cifre dopo la virgola a soli due valori
+     *
      * @return Media
      * @throws EccezioniStatistiche
      */
-    public Double getMedia() throws EccezioniStatistiche {
-        if (max==-Double.MAX_VALUE)
+    public Double getMedia ( ) throws EccezioniStatistiche {
+        if (max == -Double.MAX_VALUE)
             throw new EccezioniStatistiche("Campioni non trovati");
 
-        else return Arrotonda(accumulatore/N_spazioVariabilis);
+        else return Arrotonda(accumulatore / N_spazioVariabilis);
     }
 
 
     /**
      * Metodo che restituisce la varianza arrotondando le ultime due cifre dopo la virgola a soli due valori
+     *
      * @return Varianza
      * @throws EccezioniStatistiche
      */
-    public Double getVarianza()throws EccezioniStatistiche{
-        if (max==-Double.MAX_VALUE)
+    public Double getVarianza ( ) throws EccezioniStatistiche {
+        if (max == -Double.MAX_VALUE)
             throw new EccezioniStatistiche("Campioni non trovati");
         else {
-            Double med=this.getMedia();
-            Double temp=0.0;
-            for (Double spazioVariabili:spazioVariabilis){
-                temp+=Math.pow((spazioVariabili - med),2);
+            Double med = this.getMedia();
+            Double temp = 0.0;
+            for (Double spazioVariabili : spazioVariabilis) {
+                temp += Math.pow((spazioVariabili - med), 2);
             }
-            return Arrotonda(temp/this.N_spazioVariabilis);
+            return Arrotonda(temp / this.N_spazioVariabilis);
         }
-
 
 
     }
 
-    public Double getTemp() throws EccezioniStatistiche{
+    public Double getTemp ( ) throws EccezioniStatistiche {
 
         return temp;
     }
 
 
-    public Double getTempPerc() throws EccezioniStatistiche {
+    public Double getTempPerc ( ) throws EccezioniStatistiche {
 
         return tempPerc;
     }
+
 }

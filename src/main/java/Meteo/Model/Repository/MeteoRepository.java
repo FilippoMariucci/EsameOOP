@@ -12,9 +12,10 @@ import java.util.List;
 @Repository
 public interface MeteoRepository extends CrudRepository<SpazioVariabili,Long> {
     //hjjhgf
-    @Query(value = "SELECT * FROM Meteo WHERE CITY_ID = :CityId AND EPOCH >= :start AND EPOCH <= :stop", nativeQuery = true)
-    List<SpazioVariabili> trovaValori(@Param("CityId") String CityId,
-                                      //@Param("CityName") String CityName,
-                                      @Param("start") long start,
-                                      @Param("stop") long stop);
+    @Query ( value = "SELECT * FROM Meteo WHERE CITY_ID = :CityId AND EPOCH >= :start AND EPOCH <= :stop", nativeQuery = true )
+    List<SpazioVariabili> trovaValori ( @Param ( "CityId" ) String CityId,
+                                        //@Param("CityName") String CityName,
+                                        @Param ( "start" ) long start,
+                                        @Param ( "stop" ) long stop );
+
 }
