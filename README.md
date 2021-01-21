@@ -25,6 +25,8 @@ Questi tre diagrammi sono stati presi come spunto per la creazione del nostro pr
 l'UML non è stato più modificato in quanto abbimo lavorato direttamente al progetto.  
 
 ![alt text](https://github.com/FilippoMariucci/EsameOOP/blob/master/Casi%20d'uso.jpg)
+![alt text](https://github.com/FilippoMariucci/EsameOOP/blob/master/Modello%20Class%20Diagram.jpg)
+
 
 ****Funzionamento del programma****
 
