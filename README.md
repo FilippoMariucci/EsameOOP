@@ -16,6 +16,12 @@ Il file contenente gli ID delle Città è scaricabile dal loro sito.
 <STATS E FILTRI>: Statistiche periodiche riguardanti valori minimi, massimi, media e varianza di temperature delle varie città, sia reali sia percepite.
 Statistiche sulle lingue scelte per la visualizzazione, da parte degli utenti.
 Filtraggio in base alla periodicità (giornaliera, settimanale, mensile, range personalizzabile) e alle lingue maggiormente scelte.
+ 
+ 
+ **** Diagrammi UML****
+ 
+ Qui sotto sono stati riportati: Diagramma dei casi d'uso, Diagramma delle classi e Diagramma delle sequenze.
+Questi tre diagrammi sono stati utilizzati come spunto per la creazione del nostro progetto
 
 ****Funzionamento del programma****
 
