@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  *  che conterrà le informazioni richieste.
  *  @RestController l'annotazione utilizzata per definire i servizi web RESTful
  *
+ * @Author Mariucci,Trombetta,D'Apote
  */
 @SuppressWarnings("Unchecked")
 @RestController

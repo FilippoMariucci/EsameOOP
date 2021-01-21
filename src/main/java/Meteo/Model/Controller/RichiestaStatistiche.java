@@ -21,6 +21,15 @@ import java.net.URLEncoder;
 import java.util.List;
 import java.util.Vector;
 
+
+/**
+ *
+ * Classe che eredita da Richiesta e definisce  metodi
+ * necessari alla gestione di richieste relative al calcolo di andamenti
+ * @extends Richiesta
+ *
+ * @author Mariucci,Trombetta,D'Apote
+ */
 @SuppressWarnings("unchecked")
 public class RichiestaStatistiche extends Richiesta {
 
@@ -96,7 +105,7 @@ public class RichiestaStatistiche extends Richiesta {
         /**
          * È possibile leggere da file una linea per volta, invece di un carattere per volta.
          * Questo permette anche la lettura di interi, reali, ecc.
-         *Per poter leggere una linea per volta, è necessario creare un oggetto BufferedReader a partire dal FileReader.
+         * Per poter leggere una linea per volta, è necessario creare un oggetto BufferedReader a partire dal FileReader.
          * In altre parole, si crea prima un FileReader, poi usando questo si crea un BufferedReader.
          * Quest'ultimo si può quindi usare per la lettura riga per riga
          */
@@ -109,7 +118,10 @@ public class RichiestaStatistiche extends Richiesta {
         String s = b.readLine();
 a="n "+Contait(s);
 c="n "+Contaen(s);
-
+/**
+ * Grazie a questo ciclo è stato possibile implementare una sorta di traduttore in base alla lingua
+ * inserita dall'utente
+ */
             switch (s) {
 
                 case "[\"it\"]":

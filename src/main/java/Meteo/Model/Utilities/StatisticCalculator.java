@@ -5,6 +5,14 @@ import Meteo.Model.Eccezioni.EccezioniStatistiche;
 
 import java.util.Vector;
 
+
+/**
+ *
+ * Classe che implementa i metodi utilizzati per il calcolo delle Statistiche
+ * @extends MeteoUtilities
+ *
+ * @author Mariucci,Trombetta,D'Apote
+ */
 public class StatisticCalculator extends MeteoUtilities {
 
     /**
@@ -75,12 +83,21 @@ public class StatisticCalculator extends MeteoUtilities {
     }
 
 
+    /**
+     * @return Max
+     * @throws EccezioniStatistiche
+     */
     public Double getMax ( ) throws EccezioniStatistiche {
         if (max == -Double.MAX_VALUE)
             throw new EccezioniStatistiche("Campioni non trovati");
 
         else return max;
     }
+
+    /**
+     * @return Min
+     * @throws EccezioniStatistiche
+     */
 
     public Double getMin ( ) throws EccezioniStatistiche {
         if (max == Double.MAX_VALUE)
@@ -125,11 +142,44 @@ public class StatisticCalculator extends MeteoUtilities {
 
     }
 
+    /**
+     * Metodo che restituisce il massimo tra 5 valori inseriti all'interno dell'array
+     * @param c1
+     * @param c2
+     * @param c3
+     * @param c4
+     * @param c5
+     * @return Massimo
+     */
+
+    public int Massimo(int c1, int c2,int c3,int c4,int c5){
+        int x[]={c1,c2,c3,c4,c5};
+        int massimo;
+        massimo=x[0];
+        for (int i=0;i<x.length-1;i++){
+            if (x[i]>massimo)
+                massimo=x[i];
+        }
+        return massimo;
+    }
+
+    /**
+     * Metodo che restituisce la temperatura reale
+     *
+     * @return Temperatura reale
+     * @throws EccezioniStatistiche
+     */
     public Double getTemp ( ) throws EccezioniStatistiche {
 
         return temp;
     }
 
+    /**
+     * Metodo che restituisce la temperatura percepita
+     *
+     * @return Temperatura percepita
+     * @throws EccezioniStatistiche
+     */
 
     public Double getTempPerc ( ) throws EccezioniStatistiche {
 

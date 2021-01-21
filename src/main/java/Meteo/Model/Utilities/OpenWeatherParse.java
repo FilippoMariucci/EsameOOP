@@ -8,8 +8,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.client.RestTemplate;
 
+
+/**
+ * Classe che realizza l'interfacciamento con OpenWeather e va ad effettuare il parse con il  JSON ricevuto
+ * popolando i vari attributi
+ *
+ * @author Mariucci,Trombetta,D'Apote
+ */
 public class OpenWeatherParse {
-    //jkjhgh
     /**
      * ID della città
      */
@@ -20,7 +26,6 @@ public class OpenWeatherParse {
      */
     private long Epoch;
 
-    private Long lang;
     /**
      * valore medio della temperatura
      */
@@ -49,9 +54,6 @@ public class OpenWeatherParse {
         return Epoch;
     }
 
-    public  Long getLang() {
-        return lang;
-    }
 
     public double getTemp() {
         return temp;
@@ -65,6 +67,11 @@ public class OpenWeatherParse {
         return nomeCitta;
     }
 
+
+    /**
+     * Metodo per realizzare l'interfaccia con OpenWeather
+     * Effettua il parse con il  JSON ricevuto per popolare i suoi  attributi
+     */
     public void parse(){
         JSONParser parser=new JSONParser();
         JSONObject obj=null;

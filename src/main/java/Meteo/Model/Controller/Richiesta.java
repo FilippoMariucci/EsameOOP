@@ -17,7 +17,13 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 
 abstract class Richiesta extends MeteoUtilities {
-    //vsjhddcs
+    /**
+     *
+     * Classe astratta, ereditata da RequestStats , che definisce attributi e
+     * metodi principali necessari alla gestione di richieste ricevute nelle API
+     * @extends MeteoUtilities
+     * @author Mariucci,Trombetta,D'Apote
+     */
     private static final Logger logger = LoggerFactory.getLogger(Richiesta.class);
 
     /**
@@ -110,7 +116,12 @@ abstract class Richiesta extends MeteoUtilities {
         }
     }
 
-
+    /**
+     * Metodo che si occupa di convertire stringhe contenenti date e orari
+     * espressi in formato standard in "epoche" espresse in formato UNIX
+     * @throws InvalidParameterException
+     * @throws TimeTravelerExeption
+     */
     private void date2epoch() throws TimeTravelerExeption, InvalidParameterException {
 
         String from = (String) this.period.get("from");
@@ -135,6 +146,9 @@ abstract class Richiesta extends MeteoUtilities {
         }
     }
 
+    /**
+     * Metodo  protetto che si seleziona la temperatura richiesta (reale o percepita)
+     */
     protected Double getValue(SpazioVariabili spazioVariabili, String type) {
         switch (type) {
             case "Temperatura1":

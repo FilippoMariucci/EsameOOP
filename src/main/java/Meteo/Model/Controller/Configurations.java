@@ -17,7 +17,7 @@ import java.io.*;
  * dinamiche dell'applicativo
  * @Component annotazione che definisce la classe come componente autogestito da Spring
  *
- * @author
+ * @author Mariucci,Trombetta,D'Apote
  */
 @Component
 public class Configurations {

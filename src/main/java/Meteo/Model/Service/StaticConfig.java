@@ -1,7 +1,16 @@
 package Meteo.Model.Service;
 
+/**
+ *
+ * Classe wrapper che con i suoi metodi e attributi statici mette a disposizione
+ *  agli oggetti istanziati dall'applicativo non autogestiti dal framework
+ * le configurazioni presenti in application.properties
+ *
+ * @author Mariucci,Trombetta,D'Apote
+ */
+
 public class StaticConfig {
-    //uugfghj
+
     /**
      * apikey per il collegamento a OpenWeather
      */

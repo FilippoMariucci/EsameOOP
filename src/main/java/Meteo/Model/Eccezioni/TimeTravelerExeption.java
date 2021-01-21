@@ -1,7 +1,10 @@
 package Meteo.Model.Eccezioni;
 
+
+/**
+ * @Author Mariucci,Trombetta,D'Apote
+ */
 public class TimeTravelerExeption extends Exception {
-    //hjhgf
     private static final long serialVersionUID = 1L;
 
 

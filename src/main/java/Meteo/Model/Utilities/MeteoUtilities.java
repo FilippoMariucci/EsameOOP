@@ -8,6 +8,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Vector;
 
+
+/**
+ * Classe di Utility con metodi di utilizzo generale, viene estesa da diverse classi
+ * @author Mariucci,Trombetta,D'Apote
+ */
 public class MeteoUtilities {
 
     /**

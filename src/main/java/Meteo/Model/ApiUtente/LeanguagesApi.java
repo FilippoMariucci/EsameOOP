@@ -15,6 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 
+
+/**
+ * Classe che espone le API per le configurazioni e gestisce le chiamate effettuabili tramite:
+ * metodo HTTP GET per leggere le configurazioni attuali,
+ * metodo HTTP POST per modificare le configurazioni attuali.
+ * Si serve della classe LeanguagesConfigurations per leggere o modificare le configurazioni.
+ *
+ * @author Mariucci,Trombetta,D'Apote
+ * @RestController è l'annotazione utilizzata per definire i servizi web RESTful
+ */
 @RestController
 public class LeanguagesApi {
 

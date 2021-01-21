@@ -10,6 +10,15 @@ import org.springframework.stereotype.Component;
 
 import java.io.*;
 
+
+/**
+ *
+ * Classe che, richiamata da LeanguagesApi, permette di leggere o modificare le configurazioni
+ * dinamiche dell'applicativo
+ * @Component annotazione che definisce la classe come componente autogestito da Spring
+ *
+ * @author Mariucci,Trombetta,D'Apote
+ */
 @Component
 public class LeanguagesConfiguration {
 
@@ -24,6 +33,13 @@ public class LeanguagesConfiguration {
 
 
                 }
+
+    /**
+     * Metodo che si occupa di ritornare le configurazioni al chiamante,
+     * attuando diversi controlli sulla presenza di configurazioni in memoria e su file
+     * Se non trova configurazioni in memoria o su file, crea delle configurazioni di default
+     * @return the LeanConfig
+     */
 
     @SuppressWarnings("unchecked")
 
@@ -60,7 +76,13 @@ public class LeanguagesConfiguration {
         }
         return this.leanConfig;
             }
-
+    /**
+     * Metodo che si occupa di settare le nuove configurazioni dinamiche nel relativo attributo
+     * e di riportare gli stessi cambiamenti anche su file di testo in formato JSON in modo
+     * da poterli recuperare ad un nuovo avvio dell'applicativo
+     * @param leanConfig the LeanConfig to set
+     * @throws IOException
+     */
             public void setLeanConfig(JSONArray leanConfig) throws IOException{
         this.leanConfig=leanConfig;
 

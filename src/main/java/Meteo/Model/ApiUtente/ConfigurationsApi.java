@@ -23,19 +23,17 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * Classe che espone le API per le configurazioni e gestisce le chiamate effettuabili tramite:
+ * metodo HTTP GET per leggere le configurazioni attuali,
+ * metodo HTTP POST per modificare le configurazioni attuali.
+ * Si serve della classe Configurations per leggere o modificare le configurazioni.
+ *
+ * @author Mariucci,Trombetta,D'Apote
+ * @RestController è l'annotazione utilizzata per definire i servizi web RESTful
+ */
 @RestController
 public class ConfigurationsApi {
-    //bbnn
-    /**
-     * Classe che espone le API per le configurazioni e gestisce le chiamate effettuabili tramite:
-     * metodo HTTP GET per leggere le configurazioni attuali,
-     * metodo HTTP POST per modificare le configurazioni attuali.
-     * Si serve della classe Configurations per leggere o modificare le configurazioni.
-     *
-     * @author dafimi
-     * @RestController è l'annotazione utilizzata per definire i servizi web RESTful
-     */
-
 
         private static final Logger logger = LoggerFactory.getLogger(ConfigurationsApi.class);
 
