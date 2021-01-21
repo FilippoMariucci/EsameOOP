@@ -24,8 +24,10 @@ Filtraggio in base alla periodicità (giornaliera, settimanale, mensile, range p
 Questi tre diagrammi sono stati presi come spunto per la creazione del nostro progetto che, a seconda delle richieste, è stato modificato.
 l'UML non è stato più modificato in quanto abbimo lavorato direttamente al progetto.  
 
+Diagramma dei casi d'uso:
 ![alt text](https://github.com/FilippoMariucci/EsameOOP/blob/master/Casi%20d'uso.jpg)
 *********************************************************************************************************************************************************************************
+Diagramma delle classi
 ![alt text](https://github.com/FilippoMariucci/EsameOOP/blob/master/Modello%20Class%20Diagram.jpg)
 
 
@@ -112,31 +114,8 @@ Si potrà inoltre scegliere se ricevere le statistiche della temperatura reale i
 temperatura percepita inserendo in type "Temperatura2".
 Ecco cosa dovrà contenere il body nella stats:
 
-{"cities":
 
-["3180582",  //ci dovranno essere i CityID da noi scelti in precedenza
 
-"2643741",
-
-"5134295",
-
-"2950159",
-
-"3117735"],
-
-"period": {
-
-"from": "2021-01-19 00:00:00",  //yyyy-MM-dd HH:mm:ss
-
-//esmpio di periodo delle temperature generate(filtri) rappresentati in anno, mese, giorno - ore,minuti,secondi
-
-"to": "2021-02-20 24:00:00"
-
-},
-
-"type": "Temperatura1"
-
-}
 
 Una volta mandato il Send le nostre statistiche verranno generate.
 Per visualizzare le statistiche che vengono salvate ogni ora, bisognerà accedere attraverso un browser all'indirizzo localhost:8080/h2 e accedere al database.
