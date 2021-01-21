@@ -22,14 +22,16 @@ Filtraggio in base alla periodicità (giornaliera, settimanale, mensile, range p
  
  Qui sotto sono riportati: Diagramma dei casi d'uso, Diagramma delle classi e Diagramma delle sequenze.
 Questi tre diagrammi sono stati presi come spunto per la creazione del nostro progetto che, a seconda delle richieste, è stato modificato.
-l'UML non è stato più modificato in quanto abbimo lavorato direttamente al progetto.  
+l'UML non è stato più aggiornato in quanto abbimo lavorato direttamente al progetto.  
 
 Diagramma dei casi d'uso:
 ![alt text](https://github.com/FilippoMariucci/EsameOOP/blob/master/Casi%20d'uso.jpg)
 *********************************************************************************************************************************************************************************
-Diagramma delle classi
+Diagramma delle classi:
 ![alt text](https://github.com/FilippoMariucci/EsameOOP/blob/master/Modello%20Class%20Diagram.jpg)
-
+*********************************************************************************************************************************************************************************
+Diagramma delle sequenze:
+![alt text](https://github.com/FilippoMariucci/EsameOOP/blob/master/SequenceDiagram1.jpg)
 
 ****Funzionamento del programma****
 
