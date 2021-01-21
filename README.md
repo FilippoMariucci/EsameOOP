@@ -121,7 +121,8 @@ Per visualizzare le statistiche che vengono salvate ogni ora, bisognerà acceder
 Scaricando il codice completo avrete un file nel quale è presente il nostro database, nel quale sono state inserite diverse temperature di diverse città in
 periodi differenti.
 
-
+Riassunto metodi che si possono utilizzare:
+![alt text](https://github.com/FilippoMariucci/EsameOOP/blob/master/2021-01-21%20(1).png)
 
 ****Diario di bordo****
 
