@@ -114,8 +114,7 @@ Si potrà inoltre scegliere se ricevere le statistiche della temperatura reale i
 temperatura percepita inserendo in type "Temperatura2".
 Ecco cosa dovrà contenere il body nella stats:
 
-
-
+![alt text](https://github.com/FilippoMariucci/EsameOOP/blob/master/2021-01-21.png)
 
 Una volta mandato il Send le nostre statistiche verranno generate.
 Per visualizzare le statistiche che vengono salvate ogni ora, bisognerà accedere attraverso un browser all'indirizzo localhost:8080/h2 e accedere al database.
