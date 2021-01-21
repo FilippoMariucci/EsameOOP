@@ -142,3 +142,12 @@ A parte leggeri ritardi, una volta definito un oario di incontro su un apposito 
 ore al giorno.
 Inoltre gli alunni hanno continuato a lavorare anche in maniera autonoma, magari per cercare di risolvere dei problemi riscontrati nello sviluppo del programma, o magari colmando argomenti poco chiari tramite le apposite diapositive messe a disposizione dal prof. Frontoni, Paolanti e Martini, o magari anche con spiegazioni trovate in giro per il web.
 Abbiamo anche svolto due ricevimenti, uno con il prof Frontoni, e uno con Martini, per alcuni chiarimenti riguardo la traccia d'esame assegnata.
+
+***Percentuale svolgimento: ***
+
+**Mariucci Filippo:40%;
+Trombetta Dario: 30%;
+D'Apote Michele:30%;**
+
+***Obiettivi non raggiunti:***
+Abbiamo provato più volte e con diversi metodi ad implementare un contatore e conseguente metodo per la lingua maggiormente scelta ma non riuscendo ad ottenere il risultato sperato poichè il valore di ritorno massimo per il contatore era 1 (problema la variabile di conteggio non veniva opportunamente aggiornata dalla seconda chiamata POST per la lingua);
