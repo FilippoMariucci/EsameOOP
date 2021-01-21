@@ -22,11 +22,11 @@ public class ConfigurationTest {
     public void setUp() {
         configurations = new Configurations();
         conf = new JSONArray();
-        conf.add("Roma");
-        conf.add("Madrid");
-        conf.add("Berlino");
-        conf.add("Parigi");
-        conf.add("Londra");
+        conf.add("5134295"); //Roma
+        conf.add("3117735");//Madrid
+        conf.add("2950159");//Berlino
+        conf.add("2988507");//Parigi
+        conf.add("2643741");//Londra
         try {
             configurations.setConfig(conf);
         } catch (IOException e) {

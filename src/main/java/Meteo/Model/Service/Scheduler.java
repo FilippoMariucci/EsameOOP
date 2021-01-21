@@ -35,7 +35,7 @@ public class Scheduler {
      * considerato come una classe la cui unica istanza viene gestita dal FrameWork
      */
 
-    @Scheduled ( fixedRateString = "${mmw.interval}" )//3600000
+    @Scheduled ( fixedRateString = "${meteo.interval}" )//3600000
     public void ConnectToOpenWeather ( ) throws IOException, ParseException {
 
 

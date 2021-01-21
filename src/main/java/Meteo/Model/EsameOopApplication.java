@@ -18,7 +18,7 @@ public class EsameOopApplication {
 	@Autowired
 	private Environment env;
 
-	public static void main(String[] args) {
+	public static void main ( String[] args ) {
 		SpringApplication.run(EsameOopApplication.class, args);
 	}
 
@@ -29,10 +29,10 @@ public class EsameOopApplication {
 	 * configurazioni fisse (non modificabili a runtime)
 	 */
 	@PostConstruct
-	public void init() {
-		StaticConfig.setApikey(env.getProperty("mmw.apikey"));
-		StaticConfig.setOffset(Long.parseLong(env.getProperty("mmw.offset")));
-		StaticConfig.setCallOpenWeather(Boolean.parseBoolean(env.getProperty("mmw.callopenweather")));
-	}
+	public void init ( ) {
+		StaticConfig.setApikey(env.getProperty("meteo.apikey"));
+		StaticConfig.setOffset(Long.parseLong(env.getProperty("meteo.offset")));
+		StaticConfig.setCallOpenWeather(Boolean.parseBoolean(env.getProperty("meteo.callopenweather")));
 
+	}
 }

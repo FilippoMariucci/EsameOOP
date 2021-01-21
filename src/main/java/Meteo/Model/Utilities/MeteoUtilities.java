@@ -6,6 +6,7 @@ import org.json.simple.JSONObject;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Vector;
 
 public class MeteoUtilities {
 
@@ -43,5 +44,32 @@ public class MeteoUtilities {
         risposta.put("time",time);
         risposta.put("Risultato",new JSONArray());
         return risposta;
+    }
+
+    private String temps;
+    private Double tempPerc;
+    private String st;
+    private Integer N_spazioVariabilis;
+    private Vector<Double> spazioVariabilis;
+    private Double temp;
+    private Double sp2;
+    private Double accumulatore;
+
+
+
+    public int Contatore (String spazioVariabili ) {this.N_spazioVariabilis = 0;
+        this.accumulatore = 0.0;
+        this.spazioVariabilis = new Vector<Double>();
+        String b=spazioVariabili;
+        String a="[\"it\"]";
+        if(b.equals(a)){
+            this.N_spazioVariabilis++;
+            this.accumulatore ++;
+            this.temps=spazioVariabili;
+            spazioVariabili= this.st;
+            sp2 = this.temp;
+            this.spazioVariabilis.add(sp2);
+        }
+        return this.N_spazioVariabilis;
     }
 }

@@ -19,9 +19,16 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.List;
+import java.util.Vector;
 
 @SuppressWarnings("unchecked")
 public class RichiestaStatistiche extends Richiesta {
+
+
+
+    String a;
+    String c;
+
     private static final Logger logger = LoggerFactory.getLogger(RichiestaStatistiche.class);
 
     /**
@@ -76,8 +83,6 @@ public class RichiestaStatistiche extends Richiesta {
      */
 
     private JSONObject calcolaStatistiche(String CityId, String type) throws EccezioniStatistiche, IOException {
-
-
         List<SpazioVariabili> spazioVariabilis = meteoRepository.trovaValori(CityId, this.start, this.stop);
         JSONObject risultatiPerCityId = new JSONObject();
         risultatiPerCityId.put("CityId", CityId);
@@ -102,6 +107,8 @@ public class RichiestaStatistiche extends Richiesta {
          * A questo punto si può leggere una riga per volta usando b.readLine().
          */
         String s = b.readLine();
+a="n "+Contait(s);
+c="n "+Contaen(s);
 
             switch (s) {
 
@@ -113,6 +120,9 @@ public class RichiestaStatistiche extends Richiesta {
                     data1.put("Temperatura massima", statisticCalculator.getMax());
                     data1.put("Media", statisticCalculator.getMedia());
                     data1.put("Varianza", statisticCalculator.getVarianza());
+                    data1.put("langIt",a);
+                    data1.put("langen", c);
+
 
 
                     risultatiPerCityId.put("Dati", data1);
@@ -137,6 +147,8 @@ public class RichiestaStatistiche extends Richiesta {
                     data3.put("Maximum temperature", statisticCalculator.getMax());
                     data3.put("Avarege temperatures", statisticCalculator.getMedia());
                     data3.put("Variance between temperatures", statisticCalculator.getVarianza());
+                    data3.put("langen", c);
+                    data3.put("langIt",a);
                     risultatiPerCityId.put("Data", data3);
                     break;
                 case "[\"fr\"]":
@@ -168,5 +180,40 @@ public class RichiestaStatistiche extends Richiesta {
             }
 
         return risultatiPerCityId;
+    }
+
+
+    private Integer N_spazioVariabi;
+    private Vector<Integer> spazioVariabi;
+    private int co;
+
+
+    public int Contait(String sV){
+        this.N_spazioVariabi=0;
+        this.spazioVariabi=new Vector<Integer>(1,1);
+        String b;
+        b=sV;
+        String a="[\"it\"]";
+        if(b.equals(a)){this.N_spazioVariabi++;
+            co=this.N_spazioVariabi;
+            this.spazioVariabi.add(co);
+            return this.spazioVariabi.lastElement();}
+        else{co=this.N_spazioVariabi;
+            this.spazioVariabi.add(co);
+            return this.spazioVariabi.lastElement();}
+    }
+    public int Contaen(String sV){
+        this.N_spazioVariabi=0;
+        this.spazioVariabi=new Vector<Integer>(1,1);
+        String b;
+        b=sV;
+        String a="[\"en\"]";
+        if(b.equals(a)){this.N_spazioVariabi++;
+            co=this.N_spazioVariabi;
+            this.spazioVariabi.add(co);
+            return this.spazioVariabi.lastElement();}
+        else{co=this.N_spazioVariabi;
+            this.spazioVariabi.add(co);
+            return this.spazioVariabi.lastElement();}
     }
 }
